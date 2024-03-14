@@ -4,12 +4,22 @@ int main() {
     std::cout << "Hola a todos los de ie0217!\n";
     std::cout << "Archivo Previo 2\n";
 
-    int var1 = 0;
-    int var2 = 0;
+    int var1 = 2;
+    //int var2 = 2;
+    //int var3 = 3;
 
-    var2 = (var1 == 0) ? 15 : 27;
-
-    std::cout << "\nvar2: " << var2 << "\n";
+    switch (var1) {
+        case 1:
+            std::cout << "Caso 1\n";
+            break;
+        case 2:
+        case 3:
+            std::cout << "Caso Final\n";
+            break;
+        default:
+            std::cout << "Caso default\n";
+            break;
+    }
 
     return 0;
 }
