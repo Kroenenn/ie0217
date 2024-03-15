@@ -1,10 +1,11 @@
 #include <iostream>
 using namespace std;
 
+// Este define es para probar el uso de defines
 #define MI_PRIMER_DIFINE 925
 
 
-
+// Esta es una enumeracion de estaciones
 enum seasons {
     spring = 34,
     summer = 4,
@@ -12,6 +13,7 @@ enum seasons {
     winter = 32
 };
 
+// Esta es una enumeracion de enuncitos, se usa para probar el uso de enumeraciones
 enum enuncito {
     carro = 40,
     casa,
@@ -19,7 +21,8 @@ enum enuncito {
     patio
 };
 
-
+// La funcion main se encarga de imprimir el valor de la variable s
+// y de probar el uso de defines 
 int main() {
 
     seasons s;
