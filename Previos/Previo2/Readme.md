@@ -87,7 +87,7 @@ make
 
 ## Ejecución // Metodo 2
 
-Una vez que los programas se han compilado, se puede ejecutar cualquier ejecutable resultante utilizando el comando ./ seguido del nombre del programa sin la extensión .cpp. Por ejemplo:
+Una vez que los programas se han compilado, se puede ejecutar cualquier ejecutable utilizando el comando ./ seguido del nombre del programa sin la extensión .cpp. Por ejemplo:
 
 ```bash
 ./holaMundo
