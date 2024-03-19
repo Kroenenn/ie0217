@@ -79,7 +79,7 @@ g++ while.cpp -o while
 
 ## Compilación // Metodo 2
 
-Para compilar todos los programas, se ejecuta el comando `make` desde la línea de comandos en el directorio donde se encuentra el `Makefile`.
+Para compilar todos los programas, se ejecuta el comando "make" desde la línea de comandos en el directorio donde se encuentra el "Makefile".
 
 ```bash
 make
