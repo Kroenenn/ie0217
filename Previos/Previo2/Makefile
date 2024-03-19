@@ -8,7 +8,7 @@ PROGRAMS=$(addsuffix .exe,anidacionesdesentencias argumentosenfuncion argumentos
 
 all: $(PROGRAMS)
 
-# Regla general para compilar programas con la extensión .exe
+# Regla general para los programas con .exe
 %.exe: %.cpp
 	$(CXX) $(CXXFLAGS) -o $@ $<
 
