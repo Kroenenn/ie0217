@@ -33,6 +33,9 @@ g++ enums2.cpp -o enums2
 g++ enums3.cpp -o enums3
 ./enums3
 
+g++ enums4.cpp -o enums4
+./enums4
+
 g++ goto.cpp -o goto
 ./goto
 
