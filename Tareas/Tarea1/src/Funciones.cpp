@@ -54,14 +54,17 @@ bool intentarLetra(Ahorcado &juego, char letra) {
 
 bool juegoGanado(const Ahorcado &juego) {
     std::cout << "juegoGanado " << std::endl;
+    return false;
 }
 
 bool juegoTerminado(const Ahorcado &juego) {
     std::cout << "juegoTerminado " << std::endl;
+    return false;
 }
 
 void mostrarEstadoActual(const Ahorcado &juego) {
     std::cout << "mostrarEstadoActual " << std::endl;
+    
 }
 
 // main basico para probar las funciones de mostrarMenu y inicializarJuego
