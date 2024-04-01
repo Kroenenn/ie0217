@@ -4,15 +4,14 @@
 #include <string>
 #include <vector>
 
-class Ahorcado {
-public:
-    int maximoIntentos;
-    int intentosRealizados;
+struct Ahorcado {
     std::string palabraAdivinar;
     std::string estadoActual;
+    int maximoIntentos;
+    int intentosRealizados;
     std::vector<std::string> diccionario;
 
     Ahorcado(); // Constructor
 };
 
-#endif
+#endif // AHORCADO_HPP
