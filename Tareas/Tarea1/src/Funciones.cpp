@@ -1,12 +1,12 @@
 #include "Funciones.hpp"
 #include <iostream>
 
+// Implementación del constructor de Ahorcado
 Ahorcado::Ahorcado() {
-    maximoIntentos = 7; 
-    intentosRealizados = 0; 
-    palabraAdivinar = ""; 
-    estadoActual = ""; 
-    diccionario = {"ejemplo", "ahorcado", "programacion"}; 
+    maximoIntentos = 7; // Valor predeterminado para dificultad fácil
+    intentosRealizados = 0;
+    diccionario = {"ejemplo", "ahorcado", "programacion"};
+
 }
 
 void mostrarMenu() {
@@ -32,11 +32,54 @@ void inicializarJuego(Ahorcado &juego) {
     juego.intentosRealizados = 0;
 }
 
+bool intentarLetra(Ahorcado &juego, char letra) {
+    bool acierto = false;
+    // Verificar si la letra ya fue descubierta
+    if(juego.estadoActual.find(letra) != std::string::npos) {
+        std::cout << "Ya ha descubierto esa letra." << std::endl;
+        return false;
+    }
+    // Buscar la letra en la palabra a adivinar
+    for(size_t i = 0; i < juego.palabraAdivinar.length(); ++i) {
+        if(juego.palabraAdivinar[i] == letra) {
+            juego.estadoActual[i] = letra;
+            acierto = true;
+        }
+    }
+    if(!acierto) {
+        juego.intentosRealizados++;
+    }
+    return acierto;
+}
+
+bool juegoGanado(const Ahorcado &juego) {
+    std::cout << "juegoGanado " << std::endl;
+}
+
+bool juegoTerminado(const Ahorcado &juego) {
+    std::cout << "juegoTerminado " << std::endl;
+}
+
+void mostrarEstadoActual(const Ahorcado &juego) {
+    std::cout << "mostrarEstadoActual " << std::endl;
+}
+
 // main basico para probar las funciones de mostrarMenu y inicializarJuego
 int main() {
     Ahorcado juego;
     inicializarJuego(juego);
     mostrarMenu();
+    
+    char letra;
+    std::cout << "Introduzca una letra para adivinar: ";
+    std::cin >> letra;
+    if (intentarLetra(juego, letra)) {
+        std::cout << "Letra correcta!" << std::endl;
+    } else {
+        std::cout << "Letra incorrecta." << std::endl;
+    }
+
+    mostrarEstadoActual(juego);
 
     return 0;
 }
