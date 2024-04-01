@@ -37,8 +37,15 @@ int main() {
                         break;
                     }
                 }
-                if (!juegoGanado(juego)) {
-                    std::cout << "Ha perdido. La palabra era: " << juego.palabraAdivinar << std::endl;
+                if (!juegoGanado(juego) && juego.intentosRealizados >= juego.maximoIntentos) {
+                    std::cout << "Se acabaron los intentos. Adivine toda la palabra: ";
+                    std::string adivinanza;
+                    std::cin >> adivinanza;
+                    if (adivinanza == juego.palabraAdivinar) {
+                        std::cout << "¡Felicidades! Ha adivinado la palabra: " << juego.palabraAdivinar << std::endl;
+                    } else {
+                        std::cout << "GAME OVER. La palabra era: " << juego.palabraAdivinar << std::endl;
+                    }
                 }
                 break;
             }
