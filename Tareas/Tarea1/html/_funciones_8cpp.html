@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Tarea1: Funciones.cpp File Reference</title>
+<title>Segunda version del Doxygen Tarea1: Funciones.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Tarea1
-   &#160;<span id="projectnumber">1</span>
+   <div id="projectname">Segunda version del Doxygen Tarea1
+   &#160;<span id="projectnumber">2</span>
    </div>
-   <div id="projectbrief">Primera version de Doxygen de la Tarea1</div>
+   <div id="projectbrief">Se tuvieron que hacer ciertos ajustes</div>
   </td>
  </tr>
  </tbody>
@@ -112,7 +112,12 @@ Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Implementación de las funciones para la lógica del juego <a class="el" href="struct_ahorcado.html" title="Estructura para representar el estado del juego Ahorcado.">Ahorcado</a>. </p>
-<p>Este archivo contiene la implementación de las funciones declaradas en <a class="el" href="_funciones_8hpp.html" title="Declaraciones de funciones para la lógica del juego Ahorcado.">Funciones.hpp</a> y son utilizadas para el manejo del juego <a class="el" href="struct_ahorcado.html" title="Estructura para representar el estado del juego Ahorcado.">Ahorcado</a>, incluyendo la interacción con el usuario y la actualización del estado del juego. </p>
+<p>Este archivo contiene la implementación de las funciones declaradas en <a class="el" href="_funciones_8hpp.html" title="Declaraciones de funciones para la lógica del juego Ahorcado.">Funciones.hpp</a> y son utilizadas para el manejo del juego <a class="el" href="struct_ahorcado.html" title="Estructura para representar el estado del juego Ahorcado.">Ahorcado</a>, incluyendo la interacción con el usuario y la actualización del estado del juego.</p>
+<p>MIT License</p>
+<p>Copyright (c) 2024 Oscar Porras Silesky</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="ae8926a408b45ab592674bb2361aea2b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8926a408b45ab592674bb2361aea2b3">&#9670;&nbsp;</a></span>agregarPalabraDiccionario()</h2>
@@ -149,6 +154,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section pre"><dt>Precondition</dt><dd>La cantidad de palabras en el diccionario es menor a MAX_PALABRAS. </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>La palabra es agregada al diccionario si hay espacio disponible. </dd>
+<dd>
+La cantidad de palabras en el diccionario se incrementa en 1. </dd></dl>
 
 </div>
 </div>
