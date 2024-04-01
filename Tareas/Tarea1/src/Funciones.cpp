@@ -1,5 +1,6 @@
 #include "Funciones.hpp"
 #include <iostream>
+#include <random>
 
 // Implementación del constructor de Ahorcado
 Ahorcado::Ahorcado() {
@@ -17,7 +18,6 @@ void mostrarMenu() {
     std::cout << "5. Salir del programa." << std::endl;
 }
 
-#include <random>
 
 void inicializarJuego(Ahorcado &juego) {
     // Se genera una semilla diferente en cada ejecución
@@ -53,36 +53,19 @@ bool intentarLetra(Ahorcado &juego, char letra) {
 }
 
 bool juegoGanado(const Ahorcado &juego) {
-    std::cout << "juegoGanado " << std::endl;
-    return false;
+    return juego.estadoActual == juego.palabraAdivinar;
 }
 
 bool juegoTerminado(const Ahorcado &juego) {
-    std::cout << "juegoTerminado " << std::endl;
-    return false;
+    return juegoGanado(juego) || (juego.intentosRealizados >= juego.maximoIntentos);
 }
 
 void mostrarEstadoActual(const Ahorcado &juego) {
-    std::cout << "mostrarEstadoActual " << std::endl;
+    std::cout << "Palabra: " << juego.estadoActual << "\nIntentos Restantes: "
+              << (juego.maximoIntentos - juego.intentosRealizados) << std::endl;
     
 }
 
-// main basico para probar las funciones de mostrarMenu y inicializarJuego
-int main() {
-    Ahorcado juego;
-    inicializarJuego(juego);
-    mostrarMenu();
-    
-    char letra;
-    std::cout << "Introduzca una letra para adivinar: ";
-    std::cin >> letra;
-    if (intentarLetra(juego, letra)) {
-        std::cout << "Letra correcta!" << std::endl;
-    } else {
-        std::cout << "Letra incorrecta." << std::endl;
-    }
-
-    mostrarEstadoActual(juego);
-
-    return 0;
+void agregarPalabraDiccionario(Ahorcado &juego, const std::string &palabra) { 
+    juego.diccionario.push_back(palabra);
 }

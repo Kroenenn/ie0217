@@ -9,7 +9,7 @@ struct Ahorcado {
     std::string estadoActual;
     int maximoIntentos;
     int intentosRealizados;
-    std::vector<std::string> diccionario;
+    std::vector<std::string> diccionario; // 'vector' lo que hace es agarrar un arreglo de strings y lo convierte en un vector de strings
 
     Ahorcado(); // Constructor
 };

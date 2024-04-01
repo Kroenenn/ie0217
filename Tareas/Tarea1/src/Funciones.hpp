@@ -9,6 +9,6 @@ bool intentarLetra(Ahorcado &juego, char letra);
 bool juegoGanado(const Ahorcado &juego);
 bool juegoTerminado(const Ahorcado &juego);
 void mostrarEstadoActual(const Ahorcado &juego);
-
+void agregarPalabraDiccionario(Ahorcado &juego, const std::string &palabra);
 
 #endif // FUNCIONES_HPP
