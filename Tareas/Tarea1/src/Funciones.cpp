@@ -40,8 +40,10 @@
 Ahorcado::Ahorcado() {
     maximoIntentos = 7; // Valor predeterminado para dificultad fácil
     intentosRealizados = 0;
-    diccionario = {"ejemplo", "ahorcado", "programacion"};
-
+    cantidadPalabras = 3;
+    diccionario[0] = "ejemplo";
+    diccionario[1] = "ahorcado";
+    diccionario[2] = "programacion";
 }
 
 /**
@@ -63,7 +65,7 @@ void inicializarJuego(Ahorcado &juego) {
     // Se genera una semilla diferente en cada ejecución
     std::random_device rd; // Se crea un objeto random_device
     std::mt19937 gen(rd()); // Se crea un objeto mt19937 con la semilla de random_device
-    std::uniform_int_distribution<> distrib(0, juego.diccionario.size() - 1); // Se crea un objeto uniform_int_distribution con el rango de las palabras del diccionario
+    std::uniform_int_distribution<> distrib(0, juego.cantidadPalabras - 1); // Se crea un objeto uniform_int_distribution con el rango de las palabras del diccionario
 
     // Se selecciona una palabra aleatoria del diccionario
     juego.palabraAdivinar = juego.diccionario[distrib(gen)];
@@ -130,7 +132,15 @@ void mostrarEstadoActual(const Ahorcado &juego) {
  * @brief Agrega una nueva palabra al diccionario de palabras del juego.
  * @param juego Referencia a la estructura de Ahorcado.
  * @param palabra La palabra a agregar al diccionario.
+ * @pre La cantidad de palabras en el diccionario es menor a MAX_PALABRAS.
+ * @post La palabra es agregada al diccionario si hay espacio disponible.
+ * @post La cantidad de palabras en el diccionario se incrementa en 1.
  */
 void agregarPalabraDiccionario(Ahorcado &juego, const std::string &palabra) { 
-    juego.diccionario.push_back(palabra);
+    if (juego.cantidadPalabras < MAX_PALABRAS) {
+        juego.diccionario[juego.cantidadPalabras] = palabra;
+        juego.cantidadPalabras++;
+    } else {
+        std::cout << "El diccionario ya está lleno. No se puede agregar más palabras." << std::endl;
+    }
 }

@@ -35,9 +35,8 @@
 
 #ifndef AHORCADO_HPP
 #define AHORCADO_HPP
-
+#define MAX_PALABRAS 100
 #include <string>
-#include <vector>
 
 /**
  * @struct Ahorcado
@@ -54,7 +53,8 @@ struct Ahorcado {
     std::string estadoActual; ///< Estado actual de la palabra adivinada.
     int maximoIntentos; ///< Número máximo de intentos permitidos.
     int intentosRealizados; ///< Número de intentos realizados.
-    std::vector<std::string> diccionario; ///< Diccionario de palabras posibles para el juego.
+    std::string diccionario[MAX_PALABRAS]; ///< Diccionario de palabras posibles para el juego.
+    int cantidadPalabras;
 
     /**
      * @brief Constructor por defecto para inicializar el juego de ahorcado.

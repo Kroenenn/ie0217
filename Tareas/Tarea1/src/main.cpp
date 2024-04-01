@@ -96,8 +96,8 @@ int main() {
             }
             case 4: {
                 std::cout << "Diccionario de palabras: " << std::endl;
-                for (const auto &palabra : juego.diccionario) { // Se recorre el diccionario de palabras y se imprime cada palabra.
-                    std::cout << palabra << std::endl;
+                for (int i = 0; i < juego.cantidadPalabras; ++i) {// Se recorre el diccionario de palabras y se imprime cada palabra.
+                    std::cout << juego.diccionario[i] << std::endl;
                 }
                 break;
             }
