@@ -7,7 +7,7 @@ El sitio web que hostea la pagina solicitada para ver la documentación esta en 
 
 https://main--radiant-florentine-d1f509.netlify.app
 
-# Ejecución para la parte prática de la Tarea1
+# Ejecución para la parte práctica de la Tarea1
 
 Para compilar y ejecutar el juego de ahorcado, se corre el siguiente comando dentro de la carpeta `./src` para compilar:
 
