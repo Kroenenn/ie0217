@@ -1,20 +1,36 @@
+/**
+ * @file main.cpp
+ * @brief Punto de entrada para el juego Ahorcado.
+ *
+ * Este archivo contiene la función main, que es el punto de entrada del juego Ahorcado.
+ * Aquí se maneja la interacción con el usuario, el bucle del juego y las decisiones 
+ * del menú principal.
+ */
 
 #include "Funciones.cpp"
 #include <iostream>
 
+/**
+ * @brief Función principal que ejecuta el juego Ahorcado.
+ *
+ * En el bucle del juego, se muestra el menú, se procesan las entradas del usuario y 
+ * se actualiza el estado del juego según la elección del usuario.
+ *
+ * @return Estado de salida del programa.
+ */
 
 int main() {
-    Ahorcado juego;
-    bool salir = false;
+    Ahorcado juego; 
+    bool salir = false; 
     
     while (!salir) {
         mostrarMenu();
-        int opcion;
+        int opcion; ///< `opcion` es la variable que almacena la opción seleccionada por el usuario.
         std::cin >> opcion;
         switch (opcion) {
             case 1: {
                 std::cout << "Elija la dificultad: 1. Fácil (7 intentos), 2. Intermedio (5 intentos), 3. Difícil (3 intentos)." << std::endl;
-                int dificultad;
+                int dificultad; ///< `dificultad` es la variable que almacena la dificultad seleccionada por el usuario.
                 std::cin >> dificultad;
                 if (dificultad == 1) juego.maximoIntentos = 7;
                 else if (dificultad == 2) juego.maximoIntentos = 5;
@@ -24,7 +40,7 @@ int main() {
             }
             case 2: {
                 inicializarJuego(juego);
-                char letra;
+                char letra; ///< `letra` es la variable que almacena la letra introducida por el usuario.
                 while (!juegoTerminado(juego)) {
                     mostrarEstadoActual(juego);
                     std::cout << "Introduzca una letra: ";
@@ -39,7 +55,7 @@ int main() {
                 }
                 if (!juegoGanado(juego) && juego.intentosRealizados >= juego.maximoIntentos) {
                     std::cout << "Se acabaron los intentos. Adivine toda la palabra: ";
-                    std::string adivinanza;
+                    std::string adivinanza; ///< `adivinanza` es la variable que almacena la palabra introducida por el usuario.
                     std::cin >> adivinanza;
                     if (adivinanza == juego.palabraAdivinar) {
                         std::cout << "¡Felicidades! Ha adivinado la palabra: " << juego.palabraAdivinar << std::endl;
@@ -50,7 +66,7 @@ int main() {
                 break;
             }
             case 3: {
-                std::string nuevaPalabra;
+                std::string nuevaPalabra; ///< `nuevaPalabra` es la variable que almacena la palabra introducida por el usuario.
                 std::cout << "Escriba la palabra que desea agregar al diccionario: ";
                 std::cin >> nuevaPalabra;
                 agregarPalabraDiccionario(juego, nuevaPalabra);
@@ -58,7 +74,7 @@ int main() {
             }
             case 4: {
                 std::cout << "Diccionario de palabras: " << std::endl;
-                for (const auto &palabra : juego.diccionario) {
+                for (const auto &palabra : juego.diccionario) { // Se recorre el diccionario de palabras y se imprime cada palabra.
                     std::cout << palabra << std::endl;
                 }
                 break;
