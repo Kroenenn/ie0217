@@ -6,12 +6,28 @@ Decidí añadir dos opciones para compilar y ejecutar los archivos .cpp.
 
 ## Compilación y Ejecución Manual // Método 1
 
-Para compilar y ejecutar manualmente cada uno de los programas, se deben seguir estas instrucciones:
+Para compilar y ejecutar manualmente cada uno de los programas individuales, se deben seguir estas instrucciones:
 
 ```bash
 g++ -o <nombre_archivo>.exe <nombre_archivo>.cpp
 
 ./<nombre_archivo>.exe
+```
+
+En el caso de los archivos a continuación, como deben compilarse en conjunto, se deben correr estos comandos:
+
+```bash
+g++ -o persona.exe persona.cpp main_persona.cpp
+
+./persona.exe
+```
+
+Y
+
+```bash
+g++ -o ejercicio_individual.exe class_student.cpp funciones_student.cpp main_student.cpp
+
+./persona.exe
 ```
 
 ## Compilación // Metodo 2
