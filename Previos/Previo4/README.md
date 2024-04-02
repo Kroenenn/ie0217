@@ -27,7 +27,7 @@ Y
 ```bash
 g++ -o ejercicio_individual.exe class_student.cpp funciones_student.cpp main_student.cpp
 
-./persona.exe
+./ejercicio_individual.exe
 ```
 
 ## Compilación // Metodo 2
