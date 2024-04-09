@@ -12,12 +12,13 @@ private:
     unsigned int habitantesSinTrabajo;
     unsigned int poblacionTotal; 
 
-    void calcularEmpleo(); // Método privado para calcular empleo
+    void calcularEmpleo();
 
 public:
     PaisPrimerMundo(const std::string* nombre, bool tieneTecnologia5G , 
                     bool tieneAeropuerto, unsigned int identificador, 
                     bool tieneCentroDeInvestigacionYDesarrollo, unsigned int poblacionTotal);
+
 
     void imprimirInformacion() const override;
     

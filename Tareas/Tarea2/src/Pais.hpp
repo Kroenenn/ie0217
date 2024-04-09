@@ -23,7 +23,7 @@ public:
     Pais(const std::string* nombre, bool tieneTecnologia5G, bool tieneAeropuerto, unsigned int id);
     virtual ~Pais();
 
-    virtual void calcularPIB() = 0;
+    void calcularPIB();
     virtual void imprimirInformacion() const = 0;
 
     bool tiene5G() const;

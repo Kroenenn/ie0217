@@ -10,10 +10,10 @@ private:
     unsigned int cantidadHabitantes; // Cantidad total de habitantes en el país
 
 public:
-    
     PaisEnDesarrollo(const std::string* nombre, bool tieneTecnologia5G, 
                      bool tieneAeropuerto, unsigned int cantidadHabitantes,
                      unsigned int identificador);
+
 
     void imprimirInformacion() const override;
 
