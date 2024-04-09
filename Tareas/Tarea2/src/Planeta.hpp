@@ -3,6 +3,7 @@
 #ifndef PLANETA_HPP
 #define PLANETA_HPP
 
+#include "Continente.hpp"
 #include <string>
 
 const int MAX_CONTINENTES = 5; // Número máximo de continentes en el planeta
@@ -10,7 +11,7 @@ const int MAX_ACCESIBLES_POR_AVION = 3; // Número máximo de continentes accesi
 
 class Planeta {
 private:
-
+    Continente* continentes[MAX_CONTINENTES];
     std::string continentesAccesiblesPorAvion[MAX_ACCESIBLES_POR_AVION];
     int numContinentes;
     int numAccesiblesPorAvion;
@@ -20,9 +21,9 @@ public:
     Planeta(const std::string& nombre);
     ~Planeta();
 
-
+    bool agregarContinente(Continente* nuevoContinente);
     void imprimirInformacion() const;
-
+    Continente* buscarContinente(const std::string& nombreContinente);
     void imprimirNombresContinentes() const;
 
 

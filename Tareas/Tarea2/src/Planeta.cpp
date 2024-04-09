@@ -7,11 +7,23 @@ Planeta::Planeta(const std::string& nombre) : nombre(nombre), numContinentes(0) 
 
 }
 
+Planeta::~Planeta() {
+
+}
+
+bool Planeta::agregarContinente(Continente* nuevoContinente) {
+
+}
+
 void Planeta::imprimirInformacion() const {
 
     }
     
+        
 
+Continente* Planeta::buscarContinente(const std::string& nombreContinente) {
+
+}
 
 void Planeta::imprimirNombresContinentes() const {
 
