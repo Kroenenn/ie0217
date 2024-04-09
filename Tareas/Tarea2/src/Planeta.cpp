@@ -17,6 +17,12 @@ bool Planeta::agregarContinente(Continente* nuevoContinente) {
 
 void Planeta::imprimirInformacion() const {
 
+    }
+    
+        
+
+Continente* Planeta::buscarContinente(const std::string& nombreContinente) {
+
 }
 
 void Planeta::imprimirNombresContinentes() const {
@@ -26,10 +32,6 @@ void Planeta::imprimirNombresContinentes() const {
 Pais* Planeta::buscarPais(const std::string& nombrePais) const {
 
 }
-
-Continente* Planeta::buscarContinente(const std::string& nombreContinente) {
-    
-    }
 
 void Planeta::agregarContinenteAccesiblePorAvion(const std::string& nombreContinente) {
 

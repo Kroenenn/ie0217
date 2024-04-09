@@ -38,7 +38,7 @@ bool Pais::compararAeropuertos(const Pais& otro) const {
 }
 
 bool Pais::esIgualEnTecnologia5G(const Pais& otro) const {
- 
+
 }
 
 bool Pais::esIgualEnAeropuertos(const Pais& otro) const {
