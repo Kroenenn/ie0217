@@ -25,7 +25,7 @@ public:
     void imprimirInformacion() const;
     Continente* buscarContinente(const std::string& nombreContinente);
     void imprimirNombresContinentes() const;
-
+    Pais* buscarPais(const std::string& nombrePais) const;
 
     // Métodos relacionados con los viajes en avión
     void agregarContinenteAccesiblePorAvion(const std::string& nombreContinente);
