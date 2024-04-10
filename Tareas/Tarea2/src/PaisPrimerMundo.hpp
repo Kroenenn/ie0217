@@ -6,7 +6,7 @@
 
 class PaisPrimerMundo : public Pais {
 private:
-    unsigned int identificador; // Debe ser un número primo
+
     bool tieneCentroDeInvestigacionYDesarrollo;
     unsigned int habitantesConTrabajo; 
     unsigned int habitantesSinTrabajo;
@@ -21,7 +21,7 @@ public:
 
 
     void imprimirInformacion() const override;
-    
+
     unsigned int obtenerIdentificador() const;
     bool tieneCentroID() const;
     unsigned int obtenerHabitantesConTrabajo() const;

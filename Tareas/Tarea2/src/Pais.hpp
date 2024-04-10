@@ -21,7 +21,7 @@ protected:
 
 public:
     Pais(const std::string* nombre, bool tieneTecnologia5G, bool tieneAeropuerto, unsigned int id);
-    virtual ~Pais();
+    ~Pais();
 
     void calcularPIB();
     virtual void imprimirInformacion() const = 0;

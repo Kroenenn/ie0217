@@ -26,7 +26,7 @@ bool Planeta::agregarContinente(Continente* nuevoContinente) {
 void Planeta::imprimirInformacion() const {
     std::cout << "-----------------------------------------";
     std::cout << "\n\nInformación General:\n";
-    std::cout << "\nPlaneta posee " << numContinentes << " continentes: ";
+    std::cout << "\nPlaneta" << this->nombre  <<  "posee " << numContinentes << " continentes: ";
     for (int i = 0; i < numContinentes; ++i) {
         if (continentes[i] != nullptr) {
             if (i > 0) std::cout << ", ";

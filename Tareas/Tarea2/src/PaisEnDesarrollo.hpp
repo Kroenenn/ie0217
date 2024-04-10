@@ -14,7 +14,7 @@ public:
                      bool tieneAeropuerto, unsigned int cantidadHabitantes,
                      unsigned int identificador);
 
-
+    
     void imprimirInformacion() const override;
 
     unsigned int obtenerCantidadHabitantes() const ;
