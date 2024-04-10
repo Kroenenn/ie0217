@@ -15,7 +15,7 @@ Para compilar y ejecutar la Tarea2, se corre el siguiente comando dentro de la c
 g++ -o programa.exe main.cpp Planeta.cpp Continente.cpp Pais.cpp PaisEnDesarrollo.cpp PaisPrimerMundo.cpp Utilidad.cpp 
 ```
 
-Es importante recalcar que los 7 archivos deben estar en la misma carpeta para que compile.
+Es importante recalcar que los 13 archivos (.cpp y .hpp) deben estar en la misma carpeta para que compile.
 
 Para ejecutar el programa se utiliza el comando:
 
