@@ -1,13 +1,13 @@
 # Tarea3 / Oscar Porras Silesky
 
 
-# Documentación en Doxygen para la Tarea2
+# Documentación en Doxygen para la Tarea3
 
 El sitio web que hostea la pagina solicitada para ver la documentación está en el siguiente link:
 
 
 
-# Ejecución para la parte práctica de la Tarea2
+# Ejecución para la parte práctica de la Tarea3
 
 Para compilar y ejecutar la Tarea3, se corre el siguiente comando dentro de la carpeta `./src` para compilar:
 
