@@ -1,6 +1,8 @@
 # Tarea3 / Oscar Porras Silesky
 
 
+DISCLAIMER: Tuve que mover los documentos de código de la carpeta Tarea3 a la carpeta src. Por lo que la historia principal de los commits se encuentra en la historia de la carpeta Tarea3.
+
 # Documentación en Doxygen para la Tarea3
 
 El sitio web que hostea la pagina solicitada para ver la documentación está en el siguiente link:
