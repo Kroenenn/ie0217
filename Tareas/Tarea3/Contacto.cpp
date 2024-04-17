@@ -218,3 +218,45 @@ void ListaLocal::imprimirSoloNombres() {
         actual = actual->siguiente; // Se avanza al siguiente contacto
     }
 }
+
+// Método para ordenar la lista enlazada de contactos por nombre (orden alfabético)
+void ListaLocal::ordenarLista() {
+    if (cabeza == nullptr || cabeza->siguiente == nullptr) {
+        // La lista ya está ordenada si tiene 0 o 1 elementos.
+        return;
+    }
+
+    Contacto* ordenado = nullptr; // Lista nueva para elementos ordenados.
+    Contacto* actual = cabeza; // Comienza desde el principio de la lista desordenada.
+
+    while (actual != nullptr) {
+        Contacto* next = actual->siguiente; // Guarda el siguiente elemento.
+
+        // Encuentra la ubicación correcta en la lista ordenada.
+        if (ordenado == nullptr || strcmp(actual->nombre, ordenado->nombre) < 0) {
+            // Si el elemento actual va al principio de la lista ordenada.
+            actual->siguiente = ordenado;
+            ordenado = actual;
+        } else {
+            // Encuentra el elemento antes del cual va 'actual'.
+            Contacto* ordenadoActual= ordenado;
+            while (ordenadoActual->siguiente != nullptr && strcmp(actual->nombre, ordenadoActual->siguiente->nombre) > 0) {
+                ordenadoActual = ordenadoActual->siguiente;
+            }
+            // Inserta 'current' en la ubicación correcta.
+            actual->siguiente = ordenadoActual->siguiente;
+            ordenadoActual->siguiente = actual;
+        }
+
+        // Avanza al siguiente elemento en la lista desordenada.
+        actual = next;
+    }
+
+    cabeza = ordenado; // Actualiza la cabeza de la lista con la lista ordenada.
+}
+
+// Método para imprimir todos los contactos de la lista local, ya ordenados.
+void ListaLocal::imprimirListaOrdenada() {
+    ordenarLista(); // Primero ordena la lista.
+    imprimirLista(); // Luego imprime la lista ya ordenada.
+}

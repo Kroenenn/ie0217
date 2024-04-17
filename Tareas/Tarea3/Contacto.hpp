@@ -38,6 +38,9 @@ struct ListaLocal {
     void imprimirLista();
     bool estaVacia();
     void imprimirSoloNombres();
+    void agregarContactoOrdenado(std::string nombre, std::string telefono);
+    void ordenarLista();
+    void imprimirListaOrdenada();
 };
 
 #endif // CONTACTO_HPP
