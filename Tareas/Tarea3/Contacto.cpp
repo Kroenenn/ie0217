@@ -240,12 +240,17 @@ void ListaLocal::ordenarLista() {
         } else {
             // Encuentra el elemento antes del cual va 'actual'.
             Contacto* ordenadoActual= ordenado;
+
+            // El while evalua 2 condicciones:
+            // 1. Si el siguiente del ordenadoActual no es nulo
+            // 2. Si el nombre del actual es mayor que el nombre del siguiente del ordenadoActual
+            //    Si se cumple la condición 2, se avanza al siguiente elemento en la lista ordenada.
             while (ordenadoActual->siguiente != nullptr && strcmp(actual->nombre, ordenadoActual->siguiente->nombre) > 0) {
-                ordenadoActual = ordenadoActual->siguiente;
+                ordenadoActual = ordenadoActual->siguiente; // Avanza al siguiente elemento en la lista ordenada.
             }
             // Inserta 'actual' en la ubicación correcta.
-            actual->siguiente = ordenadoActual->siguiente;
-            ordenadoActual->siguiente = actual;
+            actual->siguiente = ordenadoActual->siguiente; // Esto es para que el siguiente del actual sea el siguiente del ordenadoActual
+            ordenadoActual->siguiente = actual; // Esto es para que el siguiente del ordenadoActual sea el actual
         }
 
         // Avanza al siguiente elemento en la lista desordenada.
