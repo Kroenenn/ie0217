@@ -243,7 +243,7 @@ void ListaLocal::ordenarLista() {
             while (ordenadoActual->siguiente != nullptr && strcmp(actual->nombre, ordenadoActual->siguiente->nombre) > 0) {
                 ordenadoActual = ordenadoActual->siguiente;
             }
-            // Inserta 'current' en la ubicación correcta.
+            // Inserta 'actual' en la ubicación correcta.
             actual->siguiente = ordenadoActual->siguiente;
             ordenadoActual->siguiente = actual;
         }
