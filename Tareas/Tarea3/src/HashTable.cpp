@@ -58,7 +58,15 @@ void HashTable::agregarContacto(std::string nombre, std::string telefono) {
     const char* nombre_c = nombre.c_str(); // Convierte el string a un puntero de char
     const char* telefono_c = telefono.c_str(); // Convierte el string a un puntero de char
 
-    tabla[indice].agregarContacto(nombre_c, telefono_c); // Agrega el contacto a la lista enlazada del índice hash
+    // Verifica si el contacto ya existe en la lista enlazada de ese índice
+    if (tabla[indice].buscarContacto(nombre_c)) {
+        std::cout << "Error: El contacto ya existe en la nube (tabla hash)." << std::endl;
+        return;
+    } else {
+        // Agrega el contacto al final de la lista enlazada del índice hash
+        tabla[indice].agregarContacto(nombre_c, telefono_c);
+        std::cout << "Contacto agregado exitosamente a la nube." << std::endl;
+    }
 }
 
 bool HashTable::eliminarContacto(std::string nombre, bool eliminarDeMemoria) {

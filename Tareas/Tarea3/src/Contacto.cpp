@@ -68,6 +68,7 @@ ListaContactos::~ListaContactos() {
 void ListaContactos::agregarContacto(const char* nombre, const char* telefono) {
     Contacto* nuevoContacto = (Contacto*)malloc(sizeof(Contacto)); // Se asigna memoria para un nuevo contacto
     if (nuevoContacto != nullptr) { // Si se asignó memoria correctamente
+    
         nuevoContacto->init(nombre, telefono); // Se inicializan los datos del nuevo contacto
         nuevoContacto->siguiente = cabeza; // El siguiente del nuevo contacto es la cabeza de la lista
         cabeza = nuevoContacto; // La cabeza de la lista es el nuevo contacto
@@ -175,6 +176,19 @@ void ListaContactos::agregarContactoOrdenado(std::string nombre, std::string tel
     }
 }
 
+Contacto* ListaContactos::buscarContacto(const char* nombre) {
+    Contacto* actual = cabeza; // Se inicia en la cabeza de la lista
+    while (actual != nullptr) {
+        if (strcmp(actual->nombre, nombre) == 0) {
+            // strcmp compara dos strings y retorna 0 si son iguales
+            // sino, retorna un número negativo si el primer string es menor que el segundo
+            return actual; // Contacto encontrado
+        }
+        actual = actual->siguiente; // Se avanza al siguiente contacto
+    }
+    return nullptr; // Contacto no encontrado
+}
+
 // Constructor de ListaLocal
 ListaLocal::ListaLocal() : cabeza(nullptr) {}
 
@@ -193,15 +207,35 @@ ListaLocal::~ListaLocal() {
 // Método para agregar un contacto a la lista local
 void ListaLocal::agregarContacto(const char* nombre, const char* telefono) { // Se utiliza const char* para que se pueda pasar un string como argumento
     // const char* es un puntero a un arreglo de caracteres constantes
+
+    if (buscarContacto(nombre) != nullptr) {
+        // Si el contacto ya existe, muestra un mensaje y no lo agregues
+        std::cout << "Error: Un contacto con ese nombre ya existe en los contactos locales." << std::endl;
+        return;
+    }
     Contacto* nuevoContacto = (Contacto*)malloc(sizeof(Contacto)); // Se asigna memoria para un nuevo contacto
     if (nuevoContacto != nullptr) { // Si se asignó memoria correctamente
         nuevoContacto->init(nombre, telefono); // Se inicializan los datos del nuevo contacto
         nuevoContacto->siguiente = cabeza; // El siguiente del nuevo contacto es la cabeza de la lista
         cabeza = nuevoContacto; // La cabeza de la lista es el nuevo contacto, esto es porque es el último contacto en la lista enlazada.
+        std::cout << "Contacto agregado exitosamente a los contactos locales." << std::endl;
     } else {
         // Manejo de error si malloc falla
         std::cout << "Error: No se pudo asignar memoria para el nuevo contacto.\n";
     }
+}
+
+// Método para buscar un contacto por nombre en la lista local
+Contacto* ListaLocal::buscarContacto(const char* nombre) {
+    Contacto* actual = cabeza; // Se inicia en la cabeza de la lista
+    while (actual != nullptr) { // Mientras no se llegue al final de la lista
+        if (strcmp(actual->nombre, nombre) == 0) { // Si se encuentra el contacto con el nombre dado
+                                                   // strcmp compara dos strings y retorna 0 si son iguales
+            return actual;  // Contacto encontrado
+        }
+        actual = actual->siguiente;
+    }
+    return nullptr;  // Contacto no encontrado
 }
 
 // Método para eliminar un contacto de la lista local

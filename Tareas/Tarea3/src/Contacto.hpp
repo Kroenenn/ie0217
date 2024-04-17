@@ -141,6 +141,15 @@ struct ListaContactos {
      * @param telefono Teléfono del contacto a agregar.
     */
     void agregarContactoOrdenado(std::string nombre, std::string telefono);
+
+    /**
+     * @brief Buscar contacto.
+     * 
+     * Esta función busca un contacto en la lista de contactos.
+     * 
+     * @param nombre Nombre del contacto a buscar.
+    */
+    Contacto* buscarContacto(const char* nombre);
 };
 
 
@@ -230,6 +239,15 @@ struct ListaLocal {
      * Esta función imprime la lista de contactos ordenada.
     */
     void imprimirListaOrdenada();
+
+    /**
+     * @brief Buscar contacto.
+     * 
+     * Esta función busca un contacto en la lista de contactos locales.
+     * 
+     * @param nombre Nombre del contacto a buscar.
+    */
+    Contacto* buscarContacto(const char* nombre);
 };
 
 #endif // CONTACTO_HPP
