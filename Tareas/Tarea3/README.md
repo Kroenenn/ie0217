@@ -11,6 +11,25 @@ El sitio web que hostea la pagina solicitada para ver la documentación está en
 
 # Ejecución para la parte práctica de la Tarea3
 
+## Gestión de Contactos
+
+Este programa permite la gestión de contactos tanto en un dispositivo local como en una nube simulada, usando una tabla hash para organizar los contactos por nombre y número de teléfono. Los usuarios pueden agregar, eliminar y visualizar contactos en ambas ubicaciones. Es importante destacar que no se permite añadir dos contactos con exactamente el mismo nombre, garantizando así que cada contacto sea único y pueda ser eliminado sin problemas.
+
+### Funciones del Menú
+
+El programa posee las siguientes opciones a través de un menú interactivo:
+
+- **1. Agregar contacto**: Permite al usuario añadir un nuevo contacto proporcionando un nombre y un número de teléfono. El contacto se añadirá tanto al dispositivo local como a la nube, siempre que no exista previamente otro contacto con el mismo nombre.
+
+- **2. Eliminar contacto**: Esta opción muestra todos los contactos disponibles tanto en el dispositivo local como en la nube y permite al usuario especificar si desea eliminar un contacto solo del dispositivo local, solo de la nube, o de ambos. Si el contacto especificado no se encuentra, se informará al usuario.
+
+- **3. Mostrar todos los contactos en orden alfabético**: Muestra todos los contactos almacenados localmente en orden alfabético por nombre. Esta función ayuda a los usuarios a visualizar fácilmente todos los contactos guardados.
+
+- **4. Mostrar tabla hash**: Visualiza todos los contactos almacenados en la nube, organizados según su índice en la tabla hash. Esta vista es útil para entender cómo se distribuyen los contactos dentro de la estructura interna de la tabla hash.
+
+- **5. Salir**: Cierra el programa.
+
+
 Para compilar y ejecutar la Tarea3, se corre el siguiente comando dentro de la carpeta `./src` para compilar:
 
 ```bash
@@ -24,6 +43,7 @@ Para ejecutar el programa se utiliza el comando:
 ```bash
 ./programa.exe
 ```
+
 
 # Respuestas a Preguntas de C++
 
