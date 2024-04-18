@@ -1,0 +1,18 @@
+# Instrucciones de compilación
+
+Este apartado contiene el programa escrito en el Laboratorio 4, el cual contiene diferentes algoritmos de ordenamiento.
+
+## Compilación y Ejecución Manual
+
+Para compilar y ejecutar manualmente, se deben seguir estas instrucciones:
+
+```bash
+g++ -o <nombre_archivo>.exe main.cpp sortAlgorithms.cpp
+
+```
+
+Y para correr el programa:
+
+```bash
+./<nombre_archivo>.exe
+```
