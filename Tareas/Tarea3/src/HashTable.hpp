@@ -1,8 +1,8 @@
 /**
  * @file HashTable.hpp
- * @brief Archivo de cabecera de la clase HashTable.
+ * @brief Archivo de cabecera de la estructura HashTable.
  * 
- * Este archivo contiene la definición de la clase HashTable, que se encarga de gestionar una tabla hash de contactos.
+ * Este archivo contiene la definición de la estructura HashTable, que se encarga de gestionar una tabla hash de contactos.
  * 
  * 
  * MIT License

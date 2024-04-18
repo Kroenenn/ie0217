@@ -1,8 +1,8 @@
 /**
  * @file HashTable.cpp
- * @brief Archivo de implementación de la clase HashTable.
+ * @brief Archivo de implementación de la estructura HashTable.
  * 
- * Este archivo contiene la implementación de la clase HashTable.
+ * Este archivo contiene la implementación de la estructura HashTable.
  * Contiene funciones como agregarContacto, eliminarContacto, buscarContacto, imprimirHashTable,
  * mostrarTodosLosContactos y fusionarYOrdenarListas.
  * 

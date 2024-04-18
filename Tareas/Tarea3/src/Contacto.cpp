@@ -1,6 +1,6 @@
 /**
  * @file Contacto.cpp
- * @brief Archivo de implementación de la clase Contacto. Posee las estructuras Contacto, ListaContactos y ListaLocal.
+ * @brief Archivo de implementación de las estructuras Contacto. Posee las estructuras Contacto, ListaContactos y ListaLocal.
  * 
  * La estructura listaLocal es una lista de contactos que se utiliza para almacenar los contactos en el celular.
  * La estructura ListaContactos es una lista de contactos que se utiliza para almacenar los contactos en la nube.

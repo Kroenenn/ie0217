@@ -1,6 +1,6 @@
 /**
  * @file Contacto.hpp
- * @brief Archivo de cabecera de la clase Contacto. Posee las estructuras Contacto, ListaContactos y ListaLocal.
+ * @brief Archivo de cabecera de las estructuras Contacto. Posee las estructuras Contacto, ListaContactos y ListaLocal.
  * 
  * Este archivo contiene la definición de la estructura Contacto y la estructura ListaContactos.
  * Tambien contiene la definición de las funciones miembro de la estructura Contacto y ListaContactos.
