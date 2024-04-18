@@ -38,9 +38,9 @@
 const int TAMANO_TABLA = 25;
 
 /**
- * @brief Clase HashTable.
+ * @brief Estructura HashTable.
  * 
- * Esta clase se encarga de gestionar una tabla hash de contactos.
+ * Esta estructura se encarga de gestionar una tabla hash de contactos.
 */
 struct HashTable {
     /**
