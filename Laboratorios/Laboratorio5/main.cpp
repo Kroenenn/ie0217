@@ -8,6 +8,10 @@ int main() {
     miBiblioteca.agregarLibro({"Cien años de soledad", "Gabriel García Márquez", 1967});
     miBiblioteca.agregarLibro({"1984", "George Orwell", 1949}); // Destacar que el libro se llama 1984, pero el anno de publicacion es 1949. debe salir primero.
     miBiblioteca.agregarLibro({"El señor de los anillos", "J.R.R. Tolkien", 1954});
+    miBiblioteca.agregarLibro({"Concherias", "Aquileo Echeverria", 2014});
+    miBiblioteca.agregarLibro({"Unica mirando al mar", "Fernando Contreras Castro", 2017});
+    miBiblioteca.agregarLibro({"La tortuga que huia del jaguar", "Marta Quintin", 2019});
+    miBiblioteca.agregarLibro({"Tu hoy no te casas", "Maria Jose Vela", 2017});
 
     // Ordena los libros de la biblioteca por año de publicación
     miBiblioteca.ordenarLibrosPorAnio();
