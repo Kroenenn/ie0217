@@ -1,6 +1,6 @@
 # Programas del Previo 8
 
-Clase 8: C++ - C++ Templates y Excepciones
+Clase 8: C++ - Templates y Excepciones
 
 Todos los archivos se pueden compilar y ejecutar de la siguiente forma:
 
