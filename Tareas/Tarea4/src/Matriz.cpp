@@ -111,6 +111,10 @@ void Matriz<T>::llenarMatriz() {
                     if (!(std::cin >> valor)) {
                         std::cin.clear();
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        // Se usa constexpr para determinar el tipo de dato de la matriz
+                        // y mostrar un mensaje adecuado al usuario, si no se usa constexpr
+                        // se genera un error ya que el compilador no puede determinar
+                        // el tipo de dato de la matriz en tiempo de compilación.
                         if constexpr (std::is_same<T, int>::value) {
                             std::cout << "Entrada inválida. Por favor ingrese un valor entero: ";
                         } else if constexpr (std::is_same<T, float>::value) {
