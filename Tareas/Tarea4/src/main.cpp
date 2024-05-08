@@ -1,3 +1,35 @@
+/**
+ * @file main.cpp
+ * @brief Archivo principal del programa.
+ * 
+ * Este archivo contiene la función main del programa.
+ * 
+ * MIT License
+ * 
+ * Copyright (c) 2024 Oscar Porras Silesky
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ * 
+ */
+
+
 #include <iostream>
 #include <string>
 #include <complex>
@@ -6,18 +38,27 @@
 #include "OperacionesBasicas.hpp"
 #include "ValidadorDeEntrada.hpp"
 
+
+//Función para llenar la matriz con números aleatorios
 template<typename T>
 void llenarMatrizAleatoria(Matriz<T>& matriz) {
+    // Seed para el generador de números aleatorios
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
     std::default_random_engine generator(seed);
+    // Distribución uniforme de números reales entre -100 y 100
     std::uniform_real_distribution<double> distribution(-100.0, 100.00);
+
+
     for (int i = 0; i < matriz.getFilas(); ++i) {
         for (int j = 0; j < matriz.getColumnas(); ++j) {
+            // is_integral se usa para verificar si T es un tipo de dato entero
             if constexpr (std::is_integral<T>::value) {
                 // static_cast<T> convierte el resultado de distribution(generator) a T
                 matriz.setElemento(i, j, static_cast<T>(distribution(generator)));
+                // is_floating_point se usa para verificar si T es un tipo de dato flotante
             } else if constexpr (std::is_floating_point<T>::value) {
                 matriz.setElemento(i, j, static_cast<T>(distribution(generator)));
+                // is_same se usa para verificar si T es un tipo de dato complejo
             } else if constexpr (std::is_same<T, std::complex<double>>::value) {
                 double real = distribution(generator);
                 double imag = distribution(generator);
@@ -27,6 +68,11 @@ void llenarMatrizAleatoria(Matriz<T>& matriz) {
     }
 }
 
+// Función para realizar una operación con dos matrices
+// Se usa un template para poder recibir matrices de cualquier tipo de dato
+// Se usa un char para indicar la operación a realizar
+
+//Matriz<T>& se utiliza para poder modificar las matrices originales
 template<typename T>
 void realizarOperacion(Matriz<T>& matriz1, Matriz<T>& matriz2, char operacion) {
     try {
@@ -67,6 +113,8 @@ void realizarOperacion(Matriz<T>& matriz1, Matriz<T>& matriz2, char operacion) {
     }
 }
 
+// Función para mostrar el menú de operaciones
+// Se usa un template para poder recibir matrices de cualquier tipo de dato
 template<typename T>
 void menuOperaciones(Matriz<T>& matriz1, Matriz<T>& matriz2) {
     bool continuar = true;
@@ -208,6 +256,10 @@ int main() {
                 std::cin >> decisioncontinuar;
             if (decisioncontinuar == 'n' || decisioncontinuar == 'N') continuar = false;
             } else if (tipoDato == "complex") {
+
+                // Se crea una matriz de números complejos
+                // Donde Matriz<std::complex<double>> es una matriz de números complejos de doble precisión
+                // Se inicializa con ceros
                 Matriz<std::complex<double>> matriz1(filas1, columnas1, std::complex<double>(0.0, 0.0));
                 Matriz<std::complex<double>> matriz2(filas2, columnas2, std::complex<double>(0.0, 0.0));
                 std::cout << "Generar datos aleatorios? (s/n): ";
@@ -231,11 +283,13 @@ int main() {
             }
 
 
-
+        // Se utiliza const std::exception& e para capturar cualquier excepción.
+        // const se usa para indicar que no se modificará el objeto e.
+        // std::exception& se usa para capturar cualquier excepción derivada de std::exception.
         } catch (const std::exception& e) {
             std::cout << "\nError: " << e.what() << "\n";
             std::cin.clear(); // Limpia el estado de cin
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignora el resto de la línea
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignora el resto de la línea, esto se hace para evitar un bucle infinito
 
             std::cout << "\n¿Desea intentar de nuevo? (s/n): ";
             std::cin >> decisionnuevo;
