@@ -7,6 +7,21 @@ El sitio web que hostea la pagina solicitada para ver la documentación está en
 
 https://tarea4ie0217c16042.netlify.app
 
+Para compilar y ejecutar la Tarea4, se corre el siguiente comando dentro de la carpeta `./src` para compilar:
+
+```bash
+g++ -o programa.exe main.cpp Matriz.cpp OperacionesBasicas.cpp ValidadorDeEntrada.cpp 
+```
+
+Es importante recalcar que los 7 archivos (.cpp y .hpp) deben estar en la misma carpeta para que compile.
+
+Para ejecutar el programa se utiliza el comando:
+
+```bash
+./programa.exe
+```
+
+
 # Ejecución para la parte práctica de la Tarea4
 
 ## Descripción del Programa
