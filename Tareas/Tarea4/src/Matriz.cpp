@@ -212,6 +212,7 @@ Matriz<T> Matriz<T>::operator*(const Matriz<T>& otra) const {
         Matriz<T> resultado(this->filas, otra.columnas, 0);
         for (int i = 0; i < this->filas; ++i) {
             for (int j = 0; j < otra.columnas; ++j) {
+                // Se u
                 T sum = T();
                 for (int k = 0; k < this->columnas; ++k) {
                     sum += this->data[i][k] * otra.data[k][j];
