@@ -207,7 +207,7 @@ Yo escogí hacer las carpetas de las dos librerias en Desktop, usando el comando
         Ctrl+Shift+P -> "C/Cpp: Edit Configurations (UI)"
         ```
 
-    - Añadir los caminos de inclusión necesarios:
+    - Añadir los caminos de inclusión necesarios en la sección de Include Path:
 
         ```bash
         /usr/local/lib/wx/include/gtk3-unicode-3.2
