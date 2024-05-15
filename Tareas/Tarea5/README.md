@@ -10,7 +10,7 @@ https://tarea5ie0217c16042.netlify.app/
 Para compilar y ejecutar la Tarea5, se corre el siguiente comando dentro de la carpeta `./Tarea5`:
 
 ```bash
-make 
+make all
 ```
 
 Es importante recalcar que los 3 archivos (.cpp y .hpp) deben estar en la misma carpeta para que compile.
