@@ -1,4 +1,33 @@
-
+/**
+ * @file ValidadorEmail.cpp
+ * @brief Implementación de la clase ValidadorEmail
+ * 
+ * Este archivo contiene la implementación de la clase ValidadorEmail, que se encarga de validar correos electrónicos.
+ * 
+ * MIT License
+ * 
+ * Copyright (c) 2024 Oscar Porras Silesky
+ * 
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ * 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ * 
+ * @see ValidadorEmail.hpp
+ */
 
 #include "ValidadorEmail.hpp"
 #include <regex>
@@ -7,6 +36,11 @@
 #include <iostream>
 #include <sstream>
 
+
+// Definición de las expresiones regulares para validar el correo
+// El nombre del correo puede contener letras, números, puntos, guiones bajos y guiones medios.
+// El dominio del correo debe contener al menos una letra y puede contener puntos.
+// La extensión del correo debe contener entre 2 y 6 letras.
 const std::string ValidadorEmail::nombreFormato = R"(^[a-zA-Z0-9._-]*$)"; // Solo para chequeo de caracteres permitidos
 const std::string ValidadorEmail::dominioFormato = R"(^[a-zA-Z]+(\.[a-zA-Z]+)*$)"; // Dominio debe tener al menos un punto
 const std::string ValidadorEmail::extensionFormato = R"(^[a-zA-Z]{2,6}$)"; // Extensión debe tener entre 2 y 6 letras
@@ -165,6 +199,8 @@ bool ValidadorEmail::validarCorreo(const std::string& inputEmail, char complex) 
         if (!std::regex_match(extensionPart, ef))
             throw std::invalid_argument("ERROR: La extensión contiene caracteres no permitidos o es numérica.");
         }
+        // Si no es compuesta, mostrar los datos de la dirección de correo electrónico 
+        // con el nombre, dominio y extensión normal
         if (complex == 'N' || complex == 'n') {
             std::cout << "________________________________________________________" << std::endl;
             std::cout << "RESULTADO DE LA VALIDACIÓN:" << std::endl;
