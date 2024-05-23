@@ -16,7 +16,7 @@ Los comentarios de los códigos fueron realizados por mi persona, Oscar Porras S
 
 ### hospital.db
 
-    La base de datos hospital.db trata acerca de la gestión de datos relacionados con pacientes, diagnósticos, admisiones y otros aspectos para la atención médica. Contiene información detallada sobre pacientes, como nombres, fechas de nacimiento, alergias, diagnósticos y medidas físicas como peso y altura. Además, proporciona herramientas para realizar consultas específicas, como la identificación de pacientes con ciertas características físicas, alergias, diagnósticos específicos, entre otros.
+La base de datos hospital.db trata acerca de la gestión de datos relacionados con pacientes, diagnósticos, admisiones y otros aspectos para la atención médica. Contiene información detallada sobre pacientes, como nombres, fechas de nacimiento, alergias, diagnósticos y medidas físicas como peso y altura. Además, proporciona herramientas para realizar consultas específicas, como la identificación de pacientes con ciertas características físicas, alergias, diagnósticos específicos, entre otros.
 
 #### Preguntas Fáciles
 
