@@ -12,6 +12,8 @@
 
 Los comentarios de los códigos fueron realizados por mi persona, Oscar Porras Silesky.
 
+---
+
 ### hospital.db
 
 #### Preguntas Fáciles
@@ -158,6 +160,7 @@ Los comentarios de los códigos fueron realizados por mi persona, Oscar Porras S
 
     **Comentario del código:** El código SQL selecciona el `patient_id`, `weight`, `height` y calcula si un paciente es obeso (`isObese`) según la fórmula BMI. La fórmula utilizada es `weight / ((height / 100.0) * (height / 100.0))`, que convierte la altura de centímetros a metros y luego calcula el BMI. La cláusula `CASE` devuelve 1 si el BMI es mayor o igual a 30, y 0 en caso contrario. Esto permite identificar y mostrar a los pacientes obesos como un valor booleano (0 o 1).
 
+---
 
 ### northwind.db
 
@@ -308,3 +311,4 @@ Los comentarios de los códigos fueron realizados por mi persona, Oscar Porras S
 
     **Comentario del codigo:** El código SQL muestra cuánto dinero perdió la empresa por dar descuentos cada año. Se ordenan los años desde el más reciente al menos reciente y los montos se redondean a dos decimales. Se selecciona el año de la fecha del pedido y se calcula la cantidad de descuento multiplicando el precio unitario, la cantidad y el descuento de cada producto. Se usan `JOIN` para combinar las tablas `orders`, `order_details` y `products` usando las claves adecuadas. Los resultados se agrupan por el año del pedido y se ordenan de forma descendente.
 
+---
