@@ -164,4 +164,28 @@ El curso IE-0315 está constituido por clases magistrales, donde el profesor pre
 El curso se complementa con el Laboratorio de Máquinas Eléctricas I, IE0116. El curso IE0116 de hecho tiene como fin, ser un complemento práctico de lo aprendido en las clases teóricas. Los estudiantes que matriculan IE0315 por primera vez, deben matricular también el curso IE0316.", "Dificil"),
      (22, "El curso IE0316, Laboratorio de Máquinas Eléctricas I, es un curso troncal del Departamento de Sistemas de Potencia y Máquinas Eléctricas que otorga 1 crédito. Es un curso de laboratorio con 2 horas semanales dedicadas a prácticas. Los contenidos incluyen el estudio de circuitos y elementos lineales, tanto monofásicos como trifásicos, y el análisis de núcleos ferromagnéticos y reactores con núcleo de hierro. Además, se trabajan con transformadores monofásicos y trifásicos, motores de inducción trifásicos, tanto de jaula de ardilla como de rotor devanado, métodos de arranque de motores de inducción y generadores de inducción trifásicos.", "Facil");
 
-SELECT * FROM `Tarea06DB`.Descripciones;
+-- SELECT * FROM `Tarea06DB`.Descripciones;
+
+-- -----------------------------------------------------
+-- CREAR LOS DATOS
+-- -----------------------------------------------------
+
+-- 1. Agregar nuevos cursos inventados por los estudiantes:
+
+INSERT INTO Tarea06DB.Cursos(Sigla, Nombre, Semestre, Creditos)
+VALUES
+("IE-1401", "Curso Inventado 1", "I", 3),
+("IE-1402", "Curso Inventado 2", "II", 4),
+("IE-1403", "Curso Inventado 3", "III", 3);
+
+-- SELECT * FROM `Tarea06DB`.Cursos;
+
+-- 2. Agregar descripciones para los nuevos cursos inventados:
+
+INSERT INTO Tarea06DB.Descripciones(CursoID, Descripcion, Dificultad)
+VALUES
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1401"), "Descripción del Curso Inventado 1", "Media"),
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1402"), "Descripción del Curso Inventado 2", "Difícil"),
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1403"), "Descripción del Curso Inventado 3", "Fácil");
+
+-- SELECT * FROM `Tarea06DB`.Descripciones;
