@@ -96,12 +96,15 @@ VALUES ("IE-0579", "Administración de sistemas", "IX", 4),
        ("IE-0541", "Seguridad ocupacional", "X", 3),
        ("", "TFG", "X", 3);
 
+-- SELECT * FROM `Tarea06DB`.Cursos;
 
 INSERT INTO `Tarea06DB`.Cursos(Sigla, Nombre, Creditos)
 VALUES ("IE-0117", "Programación bajo plataformas abiertas", 3),
        ("IE-0217", "Estructuras abstractas de datos y algoritmos para ingeniería", 3),
        ("IE-0417", "Diseño de software para ingeniería", 3),
        ("IE-0471", "Diseño eléctrico industrial I", 3);
+
+-- SELECT * FROM `Tarea06DB`.Cursos;
        
 INSERT INTO `Tarea06DB`.Cursos(Sigla, Nombre, Semestre, Creditos)
 VALUES("IE-0479", "Ingeniería económica", "VIII", 3),
@@ -113,9 +116,52 @@ VALUES("IE-0479", "Ingeniería económica", "VIII", 3),
       ("IE-0315", "Máquinas eléctricas I", "VI", 3),
       ("IE-0316", "Lab. Máquinas eléctricas I", "VI", 3);
 
+-- SELECT * FROM `Tarea06DB`.Cursos;
+
 INSERT INTO `Tarea06DB`.Requisitos(CursoID, RequisitoCursoID)
 VALUE(1,15), (2,21), (2,16), (3,17), (6,18),
 (9,19), (10,20), (12,11), (13,12), (14,21),
 (14,22);
 
-SELECT * FROM `Tarea06DB`.Requisitos;
+-- SELECT * FROM `Tarea06DB`.Requisitos;
+
+INSERT INTO `Tarea06DB`.Descripciones(CursoID, Descripcion, Dificultad)
+VALUE(1, "El profesional en ingeniería eléctrica se verá, tan pronto se incorpore al mercado laboral, en actividades técnicas que se relacionarán con diferentes tipos de organizaciones o empresas, leyes, reglamentos, normativas y muchos otros condicionantes, cuyo funcionamiento es una responsabilidad conocer.
+
+Por ello, en este curso, se considerará la organización o empresa como la unidad de estudio, sobre la cual se desarrollará el análisis de factores internos y externos tales como geopolítica, evolución tecnológica, globalización de mercados, cambios económicos, transformaciones del mercado, papel del estado, y otros, aspectos que gravitan en el adecuado accionar de estos sistemas.", "Media"),
+     (2, "El curso permite introducir los principios y fundamentos de la electrónica de
+potencia.", "Dificil"),
+     (3, "El curso de Anteproyecto de Tesis es un curso orientado a desarrollar en el estudiante las habilidades necesarias para elaborar su propuesta de investigación.", "Media"),
+     (4, "", ""),
+     (5, "", ""),
+     (6, "Integra la formación profesional del estudiante de Ingeniería Eléctrica mediante la aplicación de conceptos estudiados en cursos anteriores, junto con nuevas herramientas que permitan apoyar de manera sistémica el proceso de análisis de eventos", "Dificil"),
+     (7, "", ""),
+     (8, "", ""),
+     (9, "El curso de Salud y Seguridad Ocupacional ofrece una visión integral sobre la importancia de mantener un ambiente laboral seguro y saludable. Abarca el Reglamento de Hostigamiento Sexual según la Ley 7476, una introducción a la Salud Ocupacional y sus antecedentes históricos, tanto a nivel mundial como en Costa Rica. El curso destaca la relevancia de la salud y seguridad en el trabajo, abarcando conceptos esenciales como salud, trabajo, ambiente, riesgos laborales y daños ocupacionales. Se explora la Salud Ocupacional como una ciencia interdisciplinaria y su relación con la competitividad empresarial. Además, se analizan factores de riesgo, evaluación de riesgos y la prevención de accidentes e incidentes laborales. Incluye estudios sobre la pandemia del COVID-19 y su impacto laboral, así como la importancia del consumo de agua para la salud del trabajador. Otros temas incluyen riesgos físicos, químicos, biológicos, ergonómicos y tecnológicos, junto con el uso adecuado del equipo de protección personal. También se cubren normas y reglamentos de seguridad, como el Reglamento de Seguridad en Construcción y las Normas OHSAS 45000, así como programas de mejora continua como el Programa 5 S.", "Facil"),
+     (10, "", ""),
+     (11, "El curso de programación bajo plataformas abiertas está diseñado para enseñar a las personas estudiantes de Ingeniería Eléctrica, un conjunto de conocimientos de tipo teórico-prácticos, con el fin de brindar la preparación para abordar y resolver problemas ingenieriles, mediante el uso de herramientas y el desarrollo de programas de aplicación utilizando plataformas abiertas.
+
+El curso se enfoca en dos objetivos. Por un lado, la instalación, utilización y administración de plataformas abiertas, en particular, sistemas operativos GNU/Linux (Ubuntu). En segunda instancia, el aprendizaje de lenguajes de programación multipropósito, en particular C.
+
+Al finalizar el curso, las personas estudiantes estarán preparadas para incursionar en temas más avanzados de programación que les permitirá desarrollar soluciones a problemas afines a la carrera.", "Media"),
+     (12, "El curso de Estructuras Abstractas de Datos y Algoritmos para Ingeniería tiene la finalidad de ahondar en conceptos de programación y desarrollo de algoritmos, lo que les permite a las personas estudiantes enfrentarse sistemáticamente al desarrollo de soluciones computacionales a problemas, mediante la selección de las estructuras de datos y criterios apropiados en cada situación. Al finalizar el curso, los estudiantes comprenderán los fundamentos teóricos y prácticos del uso de estructuras de datos y algoritmos más utilizados usando el lenguaje C++. Además, estarán en capacidad de proponer nuevas estructuras de datos y algoritmos para la resolución de problemas específicos.", "Dificil"),
+     (13, "El curso IE0417, Diseño de Software para Ingeniería, es un curso optativo del Departamento de Automática, que otorga 3 créditos. Es un curso teórico con horas de laboratorio, distribuidas en 1 hora teórica y 5 horas de laboratorio por semana. Requiere haber completado el curso IE0217 como prerrequisito. Los contenidos del curso se dividen en cinco módulos principales. El Módulo 1 introduce a la ingeniería de software. El Módulo 2 aborda el proceso de desarrollo de software, incluyendo las etapas de desarrollo, modelos de procesos, sistemas de control de versiones y documentación. El Módulo 3 se centra en el modelado de software, cubriendo casos de uso, requerimientos, arquitectura, diseño de software, diagramas y el lenguaje de modelado UML. El Módulo 4 presenta técnicas y herramientas avanzadas para el desarrollo de software, incluyendo sistemas de construcción de proyectos y contenedores. Finalmente, el Módulo 5 trata la validación y pruebas de software, abordando la validación, sistemas de pruebas, herramientas de análisis y la integración continua.", "Dificil"),
+     (14, "El curso de Diseño Eléctrico Industrial I, pretende dotar al estudiante de ingeniería eléctrica de los conocimientos básicos en el campo de diseño de sistemas eléctricos en edificaciones. Es en este curso, donde se adquieren las destrezas necesarias para entender, explicar y modelar sistemas eléctricos, poniendo énfasis en el lenguaje del diseño, normativas y métodos de cálculo. Debido a la importancia de este tema en la práctica de la ingeniería, el curso de Diseño Eléctrico I ha sido incluido dentro del programa de bachillerato.", "Media"),
+     (15, "El curso IE0479, Ingeniería Económica, es un curso troncal del Departamento de Electrónica y Telecomunicaciones que otorga 3 créditos. Es un curso teórico con 4 horas teóricas por semana. Los contenidos del curso abarcan diversos aspectos de las tasas de interés, incluyendo tasas simples y compuestas, tasas efectivas y amortización. Se estudia el valor del dinero en el tiempo, el valor presente en una serie uniforme y el factor de recuperación de capital. También se aborda el uso de tablas de interés, la notación estándar de los factores, la interpolación en las tablas y la capitalización continua. Se enseñan los factores múltiples para localizar el valor presente y el valor futuro, y se estudia el costo capitalizable mediante el método del valor presente para vidas útiles iguales y diferentes. Finalmente, se incluyen métodos para el cálculo de tasas de retorno utilizando el valor presente y el método del costo anual equivalente.", "Facil"),
+     (16, "Éste es un curso de electrónica analógica muy basado en el análisis y diseño de circuitos con amplificadores operacionales.", "Dificil"),
+     (17, "El curso de proyecto eléctrico es un curso integrador y abierto en su temática, y de aplicación de estrategias de diseño, investigación y solución a un problema en el campo de la ingeniería eléctrica y ramas afines.
+
+Este curso, ubicado en las etapas finales del bachillerato en ingeniería eléctrica, se distingue por su naturaleza integral y su conexión con el proceso formativo del estudiante, pues las materias previamente cursadas sirven como insumo para tener una experiencia donde el eje central sea desarrollar un proyecto guiado. De esta forma, se puede utilizar la convergencia de conocimientos adquiridos a lo largo del programa de estudios, preparando al estudiantado para los desafíos y oportunidades que le aguardan en su trayectoria académica y profesional en el desarrollo de proyectos.", "Media"),
+     (18, "El curso IE0405, Modelos Probabilísticos de Señales y Sistemas, es un curso troncal del Departamento de Automática que otorga 3 créditos. Es un curso teórico con 4 horas teóricas por semana y requiere haber completado el curso IE0409 como prerrequisito. Los contenidos del curso se dividen en varias áreas clave. La teoría de la probabilidad cubre definiciones, teoría de conjuntos, análisis combinatorio, probabilidad conjunta, probabilidad condicional, independencia estadística y el teorema de Bayes. Las variables aleatorias se estudian en profundidad, incluyendo definiciones, propiedades, distribuciones y transformaciones. El curso también aborda variables aleatorias múltiples, vectores de probabilidad, operaciones y teoremas como el límite central y la ley de los grandes números. Los procesos aleatorios se examinan en términos de autocorrelación, características espectrales y aplicaciones en análisis de señales y sistemas. Finalmente, el curso cubre las cadenas de Markov, incluyendo análisis de procesos de vida y muerte, teoría de colas y aplicaciones en inferencia bayesiana y filtros de Kalman.", "Media"),
+     (19, "Se trata de un curso teórico por medio del cual el estudiante se prepara para conocer sobre los diversos aspectos de la responsabilidad en el ejercicio profesional, dada la importancia que reviste dicho ejercicio en la vida social y económica del país.
+
+La responsabilidad en el ejercicio profesional es un tema que encuentra en la ética su fundamento. La Ética estudia y establece los principios por medio de los cuales los profesionales atienden su ejercicio y lo hace a través de una de sus ramas, la ética profesional, la cual encuentra en la deontología su objeto de estudio.", "Facil"),
+     (20, "Es un curso básico de programación para estudiantes del área de ingeniería y afines. En el curso se introduce al estudiante al pensamiento abstracto para la resolución de problemas de ingeniería y científicos, automatizable por medio de herramientas informáticas de desarrollo, utilizando metodologías sistemáticas. El estudiante aprenderá a reconocer la aplicabilidad de flujos de control y modelos de datos básicos para lograr el diseño e implementación de programas y algoritmos.", "Media"),
+     (21, "El curso pretende familiarizar a los estudiantes, con las máquinas eléctricas estacionarias y giratorias, que se encuentran en la industria y en los sistemas eléctricos de potencia. Para tal efecto, se hace énfasis en el análisis en régimen permanente, de los transformadores eléctricos de potencia, y las máquinas de inducción trifásicas.
+
+El curso IE-0315 está constituido por clases magistrales, donde el profesor presenta la teoría de máquinas eléctricas y desarrolla ejemplos y ejercicios, para ayudar al estudiante a mejorar su desempeño, conceptos y evaluaciones.
+
+El curso se complementa con el Laboratorio de Máquinas Eléctricas I, IE0116. El curso IE0116 de hecho tiene como fin, ser un complemento práctico de lo aprendido en las clases teóricas. Los estudiantes que matriculan IE0315 por primera vez, deben matricular también el curso IE0316.", "Dificil"),
+     (22, "El curso IE0316, Laboratorio de Máquinas Eléctricas I, es un curso troncal del Departamento de Sistemas de Potencia y Máquinas Eléctricas que otorga 1 crédito. Es un curso de laboratorio con 2 horas semanales dedicadas a prácticas. Los contenidos incluyen el estudio de circuitos y elementos lineales, tanto monofásicos como trifásicos, y el análisis de núcleos ferromagnéticos y reactores con núcleo de hierro. Además, se trabajan con transformadores monofásicos y trifásicos, motores de inducción trifásicos, tanto de jaula de ardilla como de rotor devanado, métodos de arranque de motores de inducción y generadores de inducción trifásicos.", "Facil");
+
+SELECT * FROM `Tarea06DB`.Descripciones;
