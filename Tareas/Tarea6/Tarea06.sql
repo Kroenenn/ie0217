@@ -121,7 +121,7 @@ VALUES("IE-0479", "Ingeniería económica", "VIII", 3),
 INSERT INTO `Tarea06DB`.Requisitos(CursoID, RequisitoCursoID)
 VALUE(1,15), (2,21), (2,16), (3,17), (6,18),
 (9,19), (10,20), (12,11), (13,12), (14,21),
-(14,22);
+(14,22), (6,1);
 
 -- SELECT * FROM `Tarea06DB`.Requisitos;
 
@@ -291,4 +291,12 @@ SELECT * FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613');
 SELECT * FROM Tarea06DB.Descripciones WHERE CursoID IN (
     SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613')
 );
+
+
+-- 2. Eliminar requisitos de 2 cursos específicos
+
+DELETE FROM Tarea06DB.Requisitos WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0679');
+DELETE FROM Tarea06DB.Requisitos WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0541');
+
+SELECT * FROM Tarea06DB.Requisitos WHERE CursoID IN (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-0679', 'IE-0541'));
 
