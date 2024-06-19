@@ -8,11 +8,11 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema Tarea06DB
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema Tarea06DB
 -- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `Tarea06DB` DEFAULT CHARACTER SET utf8 ;
 USE `Tarea06DB` ;
@@ -22,9 +22,9 @@ USE `Tarea06DB` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Tarea06DB`.`Cursos` (
   `idCursos` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `Sigla` CHAR(7) NOT NULL,
+  `Sigla` CHAR(7) DEFAULT NULL,
   `Nombre` VARCHAR(200) NOT NULL,
-  `Semestre` INT UNSIGNED NOT NULL,
+  `Semestre` VARCHAR(4) NOT NULL,
   `Creditos` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idCursos`),
   UNIQUE INDEX `idCursos_Cursos_UNIQUE` (`idCursos` ASC) VISIBLE,
@@ -83,5 +83,3 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-SELECT * FROM `Tarea06DB`.Cursos;
