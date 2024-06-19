@@ -232,4 +232,20 @@ UPDATE Tarea06DB.Cursos
 SET Nombre = 'Nuevo Nombre 3 : Baile', Creditos = 4 , Sigla = 'IE-4444'
 WHERE Nombre = 'Optativa III';
 
-SELECT * FROM Tarea06DB.Cursos;
+-- SELECT * FROM Tarea06DB.Cursos;
+
+-- 2. Actualizar la descripción y dificultad de 3 cursos existentes
+
+UPDATE Tarea06DB.Descripciones
+SET Descripcion = 'Nueva descripción 1', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-2222'); 
+
+UPDATE Tarea06DB.Descripciones
+SET Descripcion = 'Nueva descripción 2', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-3333');  
+
+UPDATE Tarea06DB.Descripciones
+SET Descripcion = 'Nueva descripción 3', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-4444');
+
+-- SELECT * FROM Tarea06DB.Descripciones;
