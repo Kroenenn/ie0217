@@ -206,3 +206,11 @@ SELECT c.Sigla, c.Nombre, r.RequisitoCursoID
 FROM Tarea06DB.Cursos c
 INNER JOIN Tarea06DB.Requisitos r ON c.idCursos = r.CursoID
 WHERE c.Sigla = 'IE-0471';
+
+-- 3. Consultar para listar los cursos que no son optativos
+
+SELECT Sigla, Nombre, Semestre, Creditos
+FROM Tarea06DB.Cursos
+WHERE Semestre LIKE '%X%'
+  AND Nombre NOT LIKE '%Optativa%';
+
