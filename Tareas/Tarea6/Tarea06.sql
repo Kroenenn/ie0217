@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS `Tarea06DB`.`Cursos` (
   `idCursos` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `Sigla` CHAR(7) DEFAULT NULL,
   `Nombre` VARCHAR(200) NOT NULL,
-  `Semestre` VARCHAR(4) NOT NULL,
+  `Semestre` VARCHAR(4) DEFAULT NULL,
   `Creditos` INT UNSIGNED NOT NULL,
   PRIMARY KEY (`idCursos`),
   UNIQUE INDEX `idCursos_Cursos_UNIQUE` (`idCursos` ASC) VISIBLE,
@@ -83,3 +83,17 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+INSERT INTO `Tarea06DB`.Cursos(Sigla, Nombre, Semestre, Creditos)
+VALUES ("IE-0579", "Administración de sistemas", "IX", 4),
+       ("IE-0613", "Electrónica Industrial", "IX", 4),
+       ("IE-0599", "Anteproyecto de TFG", "IX", 4),
+       ("IE-XXXX", "Optativa I", "IX", 3),
+       ("IE-YYYY", "Optativa II", "IX", 3),
+       ("IE-0679", "Ciencia de datos para la est. y pron. de eventos", "X", 3),
+       ("IE-ZZZZ", "Optativa III", "IX", 3),
+       ("IE-WWWW", "Optativa IV", "IX", 3),
+       ("IE-0541", "Seguridad ocupacional", "X", 3),
+       ("", "TFG", "X", 3);
+       
+SELECT * FROM `Tarea06DB`.Cursos;
