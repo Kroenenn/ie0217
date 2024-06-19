@@ -199,3 +199,10 @@ VALUES
 SELECT c.Sigla, c.Nombre, c.Semestre, c.Creditos, d.Descripcion, d.Dificultad
 FROM Tarea06DB.Cursos c
 LEFT JOIN Tarea06DB.Descripciones d ON c.idCursos = d.CursoID;
+
+-- 2. Consultar los requisitos de un curso específico
+
+SELECT c.Sigla, c.Nombre, r.RequisitoCursoID
+FROM Tarea06DB.Cursos c
+INNER JOIN Tarea06DB.Requisitos r ON c.idCursos = r.CursoID
+WHERE c.Sigla = 'IE-0471';
