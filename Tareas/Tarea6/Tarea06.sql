@@ -189,3 +189,13 @@ VALUES
 ((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1403"), "Descripción del Curso Inventado 3", "Fácil");
 
 -- SELECT * FROM `Tarea06DB`.Descripciones;
+
+-- -----------------------------------------------------
+-- LEER LOS DATOS
+-- -----------------------------------------------------
+
+-- 1. Mostrar los cursos con sus descripciones y dificultades
+
+SELECT c.Sigla, c.Nombre, c.Semestre, c.Creditos, d.Descripcion, d.Dificultad
+FROM Tarea06DB.Cursos c
+LEFT JOIN Tarea06DB.Descripciones d ON c.idCursos = d.CursoID;
