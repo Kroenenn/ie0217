@@ -95,5 +95,12 @@ VALUES ("IE-0579", "Administración de sistemas", "IX", 4),
        ("IE-WWWW", "Optativa IV", "IX", 3),
        ("IE-0541", "Seguridad ocupacional", "X", 3),
        ("", "TFG", "X", 3);
+
+
+INSERT INTO `Tarea06DB`.Cursos(Sigla, Nombre, Creditos)
+VALUES ("IE-0117", "Programación bajo plataformas abiertas", 3),
+       ("IE-0217", "Estructuras abstractas de datos y algoritmos para ingeniería", 3),
+       ("IE-0417", "Diseño de software para ingeniería", 3),
+       ("IE-0471", "Diseño eléctrico industrial I", 3);
        
 SELECT * FROM `Tarea06DB`.Cursos;
