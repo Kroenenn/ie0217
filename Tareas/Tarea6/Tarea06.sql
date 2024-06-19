@@ -103,4 +103,14 @@ VALUES ("IE-0117", "Programación bajo plataformas abiertas", 3),
        ("IE-0417", "Diseño de software para ingeniería", 3),
        ("IE-0471", "Diseño eléctrico industrial I", 3);
        
+INSERT INTO `Tarea06DB`.Cursos(Sigla, Nombre, Semestre, Creditos)
+VALUES("IE-0479", "Ingeniería económica", "VIII", 3),
+      ("IE-0413", "Electrónica II", "V", 3),
+      ("IE-0499", "Proyecto eléctrico", "VIII", 3),
+      ("IE-0405", "Modelos probabilísticos de señales y sistemas", "VI", 3),
+      ("IE-0501", "Responsabilidades en el ejercicio profesional", "VI", 1),
+      ("CI-0202", "Principios de Informática", "II", 4),
+      ("IE-0315", "Máquinas eléctricas I", "VI", 3),
+      ("IE-0316", "Lab. Máquinas eléctricas I", "VI", 3);
+
 SELECT * FROM `Tarea06DB`.Cursos;
