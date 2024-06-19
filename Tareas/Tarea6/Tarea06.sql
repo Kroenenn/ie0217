@@ -249,3 +249,46 @@ SET Descripcion = 'Nueva descripción 3', Dificultad = 'Facil'
 WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-4444');
 
 -- SELECT * FROM Tarea06DB.Descripciones;
+
+-- -----------------------------------------------------
+-- ELIMINAR LOS DATOS
+-- -----------------------------------------------------
+
+-- Eliminar la clave foránea existente en la tabla Requisitos
+ALTER TABLE Tarea06DB.Requisitos DROP FOREIGN KEY fk_Requisitos_CursoID;
+ALTER TABLE Tarea06DB.Requisitos DROP FOREIGN KEY fk_Requisitos_RequisitoCursoID;
+ALTER TABLE Tarea06DB.Descripciones DROP FOREIGN KEY fk_Descripciones_CursoID;
+
+
+-- Crear la clave foránea con ON DELETE CASCADE en la tabla Requisitos y Descripciones
+ALTER TABLE Tarea06DB.Descripciones
+ADD CONSTRAINT fk_Descripciones_CursoID
+FOREIGN KEY (CursoID) REFERENCES Tarea06DB.Cursos(idCursos)
+ON DELETE CASCADE;
+
+
+ALTER TABLE Tarea06DB.Requisitos
+ADD CONSTRAINT fk_Requisitos_CursoID
+FOREIGN KEY (CursoID) REFERENCES Tarea06DB.Cursos(idCursos)
+ON DELETE CASCADE;
+
+ALTER TABLE Tarea06DB.Requisitos
+ADD CONSTRAINT fk_Requisitos_RequisitoCursoID
+FOREIGN KEY (RequisitoCursoID) REFERENCES Tarea06DB.Cursos(idCursos)
+ON DELETE CASCADE;
+
+
+-- 1. Eliminar un curso inventado y 2 cursos del plan y sus descripciones asociadas
+
+DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-1001';  -- Curso inventado
+DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0579';  -- Curso del plan (Administración de sistemas)
+DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0613';  -- Curso del plan (Electrónica Industrial)
+
+-- Verificar que los cursos no existen en la tabla Cursos
+SELECT * FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613');
+
+-- Verificar que las descripciones de los cursos eliminados no existen en la tabla Descripciones
+SELECT * FROM Tarea06DB.Descripciones WHERE CursoID IN (
+    SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613')
+);
+
