@@ -172,15 +172,19 @@ El curso se complementa con el Laboratorio de Máquinas Eléctricas I, IE0116. E
 
 -- 1. Agregar nuevos cursos inventados por los estudiantes:
 
+SELECT * FROM `Tarea06DB`.Cursos;
+
 INSERT INTO Tarea06DB.Cursos(Sigla, Nombre, Semestre, Creditos)
 VALUES
 ("IE-1401", "Curso Inventado 1", "I", 3),
 ("IE-1402", "Curso Inventado 2", "II", 4),
 ("IE-1403", "Curso Inventado 3", "III", 3);
 
--- SELECT * FROM `Tarea06DB`.Cursos;
+SELECT * FROM `Tarea06DB`.Cursos;
 
 -- 2. Agregar descripciones para los nuevos cursos inventados:
+
+SELECT * FROM `Tarea06DB`.Descripciones;
 
 INSERT INTO Tarea06DB.Descripciones(CursoID, Descripcion, Dificultad)
 VALUES
@@ -188,7 +192,7 @@ VALUES
 ((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1402"), "Descripción del Curso Inventado 2", "Difícil"),
 ((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1403"), "Descripción del Curso Inventado 3", "Fácil");
 
--- SELECT * FROM `Tarea06DB`.Descripciones;
+SELECT * FROM `Tarea06DB`.Descripciones;
 
 -- -----------------------------------------------------
 -- LEER LOS DATOS
@@ -220,6 +224,8 @@ WHERE Semestre LIKE '%X%'
 
 -- 1. Actualizar el nombre y créditos de 3 cursos optativos
 
+SELECT * FROM Tarea06DB.Cursos;
+
 UPDATE Tarea06DB.Cursos
 SET Nombre = 'Nuevo Nombre 1 : Lengua Española', Creditos = 4 , Sigla = 'IE-2222'
 WHERE Nombre = 'Optativa I'; 
@@ -232,9 +238,11 @@ UPDATE Tarea06DB.Cursos
 SET Nombre = 'Nuevo Nombre 3 : Baile', Creditos = 4 , Sigla = 'IE-4444'
 WHERE Nombre = 'Optativa III';
 
--- SELECT * FROM Tarea06DB.Cursos;
+SELECT * FROM Tarea06DB.Cursos;
 
 -- 2. Actualizar la descripción y dificultad de 3 cursos existentes
+
+SELECT * FROM Tarea06DB.Descripciones;
 
 UPDATE Tarea06DB.Descripciones
 SET Descripcion = 'Nueva descripción 1', Dificultad = 'Facil'
@@ -248,7 +256,7 @@ UPDATE Tarea06DB.Descripciones
 SET Descripcion = 'Nueva descripción 3', Dificultad = 'Facil'
 WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-4444');
 
--- SELECT * FROM Tarea06DB.Descripciones;
+SELECT * FROM Tarea06DB.Descripciones;
 
 -- -----------------------------------------------------
 -- ELIMINAR LOS DATOS
@@ -280,6 +288,14 @@ ON DELETE CASCADE;
 
 -- 1. Eliminar un curso inventado y 2 cursos del plan y sus descripciones asociadas
 
+-- Verificar que los cursos existen en la tabla Cursos
+SELECT * FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613');
+
+-- Verificar que las descripciones de los cursos eliminados existen en la tabla Descripciones
+SELECT * FROM Tarea06DB.Descripciones WHERE CursoID IN (
+    SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613')
+);
+
 DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-1001';  -- Curso inventado
 DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0579';  -- Curso del plan (Administración de sistemas)
 DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0613';  -- Curso del plan (Electrónica Industrial)
@@ -294,6 +310,8 @@ SELECT * FROM Tarea06DB.Descripciones WHERE CursoID IN (
 
 
 -- 2. Eliminar requisitos de 2 cursos específicos
+
+SELECT * FROM Tarea06DB.Requisitos WHERE CursoID IN (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-0679', 'IE-0541'));
 
 DELETE FROM Tarea06DB.Requisitos WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0679');
 DELETE FROM Tarea06DB.Requisitos WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0541');
