@@ -214,3 +214,22 @@ FROM Tarea06DB.Cursos
 WHERE Semestre LIKE '%X%'
   AND Nombre NOT LIKE '%Optativa%';
 
+-- -----------------------------------------------------
+-- ACTUALIZAR LOS DATOS
+-- -----------------------------------------------------
+
+-- 1. Actualizar el nombre y créditos de 3 cursos optativos
+
+UPDATE Tarea06DB.Cursos
+SET Nombre = 'Nuevo Nombre 1 : Lengua Española', Creditos = 4 , Sigla = 'IE-2222'
+WHERE Nombre = 'Optativa I'; 
+
+UPDATE Tarea06DB.Cursos
+SET Nombre = 'Nuevo Nombre 2 : Procesos Industriales', Creditos = 4, Sigla = 'IE-3333'
+WHERE Nombre = 'Optativa II';
+
+UPDATE Tarea06DB.Cursos
+SET Nombre = 'Nuevo Nombre 3 : Baile', Creditos = 4 , Sigla = 'IE-4444'
+WHERE Nombre = 'Optativa III';
+
+SELECT * FROM Tarea06DB.Cursos;
