@@ -90,7 +90,7 @@ USE `Tarea06DB` ;
 ```
 - Esquema: `Tarea06DB`
 
-La base de datos antes de crearse el esquema se veía de la siguiente forma:
+Los esquemas antes de crearse Tarea06DB se veía de la siguiente forma:
 
 ![Creación de la base de datos](images/basenocreada.png)
 
