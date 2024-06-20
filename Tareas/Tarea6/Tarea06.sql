@@ -180,15 +180,25 @@ El curso se complementa con el Laboratorio de Máquinas Eléctricas I, IE0116. E
 
 -- 1. Agregar nuevos cursos inventados por los estudiantes:
 
-SELECT * FROM `Tarea06DB`.Cursos;
+-- SELECT * FROM `Tarea06DB`.Cursos;
 
 INSERT INTO Tarea06DB.Cursos(Sigla, Nombre, Semestre, Creditos)
 VALUES
-("IE-1401", "Curso Inventado 1", "I", 3),
-("IE-1402", "Curso Inventado 2", "II", 4),
-("IE-1403", "Curso Inventado 3", "III", 3);
+("IE-1401", "Curso Inventado 1 : Principios de Videojuegos", "X", 3),
+("IE-1402", "Curso Inventado 2 : Uso de editores de videos", "X", 4),
+("IE-1403", "Curso Inventado 3 : Programacion Javascript", "X", 3);
 
 SELECT * FROM `Tarea06DB`.Cursos;
+
+  -- Se deben agregar los requisitos para dichos cursos inventados
+
+INSERT INTO Tarea06DB.Requisitos(CursoID, RequisitoCursoID)
+VALUES
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1401"), (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-0117")),
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1402"), (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-0217")),
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1403"), (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-0417"));
+
+SELECT * FROM `Tarea06DB`.Requisitos;
 
 -- 2. Agregar descripciones para los nuevos cursos inventados:
 
@@ -226,6 +236,13 @@ FROM Tarea06DB.Cursos
 WHERE Semestre LIKE '%X%'
   AND Nombre NOT LIKE '%Optativa%';
 
+-- 4. Listar los cursos que pertenecen al semestre X.
+
+SELECT Sigla, Nombre, Semestre, Creditos
+FROM Tarea06DB.Cursos
+WHERE Semestre LIKE '%X%'
+	AND Semestre NOT LIKE '%IX%';
+
 -- -----------------------------------------------------
 -- ACTUALIZAR LOS DATOS
 -- -----------------------------------------------------
@@ -235,15 +252,15 @@ WHERE Semestre LIKE '%X%'
 SELECT * FROM Tarea06DB.Cursos;
 
 UPDATE Tarea06DB.Cursos
-SET Nombre = 'Nuevo Nombre 1 : Lengua Española', Creditos = 4 , Sigla = 'IE-2222'
+SET Nombre = 'Nuevo Nombre 1 : Microelectronica', Creditos = 3 , Sigla = 'IE-0411'
 WHERE Nombre = 'Optativa I'; 
 
 UPDATE Tarea06DB.Cursos
-SET Nombre = 'Nuevo Nombre 2 : Procesos Industriales', Creditos = 4, Sigla = 'IE-3333'
+SET Nombre = 'Nuevo Nombre 2 : Microprocesadores', Creditos = 3, Sigla = 'IE-0623'
 WHERE Nombre = 'Optativa II';
 
 UPDATE Tarea06DB.Cursos
-SET Nombre = 'Nuevo Nombre 3 : Baile', Creditos = 4 , Sigla = 'IE-4444'
+SET Nombre = 'Nuevo Nombre 3 : Laboratorio de Microcontroladores', Creditos = 3 , Sigla = 'IE-0624'
 WHERE Nombre = 'Optativa III';
 
 SELECT * FROM Tarea06DB.Cursos;
@@ -253,16 +270,16 @@ SELECT * FROM Tarea06DB.Cursos;
 SELECT * FROM Tarea06DB.Descripciones;
 
 UPDATE Tarea06DB.Descripciones
-SET Descripcion = 'Nueva descripción 1', Dificultad = 'Facil'
-WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-2222'); 
+SET Descripcion = 'Nueva descripción 1:Con este curso se pretende familiarizar al estudiante con el diseño de circuitos basados en transistores MOSFET construidos en procesos de fabricación de muy alto grado de integración (VLSI).', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0411'); 
 
 UPDATE Tarea06DB.Descripciones
-SET Descripcion = 'Nueva descripción 2', Dificultad = 'Facil'
-WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-3333');  
+SET Descripcion = 'Nueva descripción 2: Curso microprocesadores', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0623');  
 
 UPDATE Tarea06DB.Descripciones
-SET Descripcion = 'Nueva descripción 3', Dificultad = 'Facil'
-WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-4444');
+SET Descripcion = 'Nueva descripción 3: Este es un curso práctico de solución de problemas ingenieriles utilizando sistemas microcontrolados. Al final del curso los estudiantes estarán preparados para resolver problemas reales de control de equipos y procesos utilizando micro-controladores.', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0624');
 
 SELECT * FROM Tarea06DB.Descripciones;
 

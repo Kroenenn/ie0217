@@ -323,13 +323,13 @@ Por lo que la tabla de Descripciones quedó así:
 
 -- 1. Agregar nuevos cursos inventados por los estudiantes:
 
-SELECT * FROM `Tarea06DB`.Cursos;
+-- SELECT * FROM `Tarea06DB`.Cursos;
 
 INSERT INTO Tarea06DB.Cursos(Sigla, Nombre, Semestre, Creditos)
 VALUES
-("IE-1401", "Curso Inventado 1", "I", 3),
-("IE-1402", "Curso Inventado 2", "II", 4),
-("IE-1403", "Curso Inventado 3", "III", 3);
+("IE-1401", "Curso Inventado 1 : Principios de Videojuegos", "X", 3),
+("IE-1402", "Curso Inventado 2 : Uso de editores de videos", "X", 4),
+("IE-1403", "Curso Inventado 3 : Programacion Javascript", "X", 3);
 
 SELECT * FROM `Tarea06DB`.Cursos;
 ```
@@ -343,6 +343,23 @@ Por lo que la tabla de Cursos antes de ser modificada para agregar los cursos in
 Y entonces la tabla de Cursos pasó a verse de la siguiente manera:
 
 ![Inserción de cursos inventados](images/CRUD/Crear/AgregandoCursoInventado_Cursos.png)
+
+Y a su vez se agregaron los requisitos de los cursos inventados:
+
+```sql
+  -- Se deben agregar los requisitos para dichos cursos inventados
+
+INSERT INTO Tarea06DB.Requisitos(CursoID, RequisitoCursoID)
+VALUES
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1401"), (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-0117")),
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1402"), (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-0217")),
+((SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-1403"), (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = "IE-0417"));
+
+SELECT * FROM `Tarea06DB`.Requisitos;
+
+```
+
+![Inserción de requisitos de cursos inventados](images/CRUD/Crear/Requisitoscursosinventados.png)
 
 ##### 2. **Agregar descripciones para los nuevos cursos inventados:**
 
@@ -392,7 +409,6 @@ Por lo que los resultados obtenidos fueron los siguientes:
 
 ![Mostrar Cursos con Descripciones Captura](images/CRUD/Leer/LeerDatos1.png)
 
-![Mostrar Cursos con Descripciones Captura 2](images/CRUD/Leer/LeerDatos2.png)
 
 Se puede apreciar que el resultado obtenido fue el deseado, donde se pueden ver la descripciones y dificultades.
 
@@ -438,6 +454,18 @@ Si se deseara que salgan los que dicen Optativa nada más se removería el "AND 
 
 ![Listar Cursos No Optativos Captura](images/CRUD/Leer/LeerDatos4v1.png)
 
+##### 4. Listar cursos del semestre X.
+
+```sql
+-- 4. Listar los cursos que pertenecen al semestre X.
+
+SELECT Sigla, Nombre, Semestre, Creditos
+FROM Tarea06DB.Cursos
+WHERE Semestre LIKE '%X%';
+```
+
+![Listar Cursos Semestre X](images/CRUD/Leer/LeerDatos5.png)
+
 
 #### Actualización de Datos
 
@@ -455,15 +483,15 @@ El código utilizado fue:
 SELECT * FROM Tarea06DB.Cursos;
 
 UPDATE Tarea06DB.Cursos
-SET Nombre = 'Nuevo Nombre 1 : Lengua Española', Creditos = 4 , Sigla = 'IE-2222'
+SET Nombre = 'Nuevo Nombre 1 : Microelectronica', Creditos = 3 , Sigla = 'IE-0411'
 WHERE Nombre = 'Optativa I'; 
 
 UPDATE Tarea06DB.Cursos
-SET Nombre = 'Nuevo Nombre 2 : Procesos Industriales', Creditos = 4, Sigla = 'IE-3333'
+SET Nombre = 'Nuevo Nombre 2 : Microprocesadores', Creditos = 3, Sigla = 'IE-0623'
 WHERE Nombre = 'Optativa II';
 
 UPDATE Tarea06DB.Cursos
-SET Nombre = 'Nuevo Nombre 3 : Baile', Creditos = 4 , Sigla = 'IE-4444'
+SET Nombre = 'Nuevo Nombre 3 : Laboratorio de Microcontroladores', Creditos = 3 , Sigla = 'IE-0624'
 WHERE Nombre = 'Optativa III';
 
 SELECT * FROM Tarea06DB.Cursos;
@@ -477,7 +505,7 @@ Y la tabla de Cursos pasó a actualizarse con los siguientes resultados.
 
 ![Actualizar Cursos Captura](images/CRUD/Actualizar/ActualizarDatos1.png)
 
-Se pueden ver los nuevos cursos agregados encima de las optativas, IE-2222, IE-3333, IE-4444.
+Se pueden ver los nuevos cursos agregados encima de las optativas, IE-0411, IE-0623, IE-0624.
 
 ##### 2. Actualizar la descripción y dificultad de 3 cursos existentes
 
@@ -489,16 +517,16 @@ EL código utilizado fue:
 SELECT * FROM Tarea06DB.Descripciones;
 
 UPDATE Tarea06DB.Descripciones
-SET Descripcion = 'Nueva descripción 1', Dificultad = 'Facil'
-WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-2222'); 
+SET Descripcion = 'Nueva descripción 1:Con este curso se pretende familiarizar al estudiante con el diseño de circuitos basados en transistores MOSFET construidos en procesos de fabricación de muy alto grado de integración (VLSI).', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0411'); 
 
 UPDATE Tarea06DB.Descripciones
-SET Descripcion = 'Nueva descripción 2', Dificultad = 'Facil'
-WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-3333');  
+SET Descripcion = 'Nueva descripción 2: Curso microprocesadores', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0623');  
 
 UPDATE Tarea06DB.Descripciones
-SET Descripcion = 'Nueva descripción 3', Dificultad = 'Facil'
-WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-4444');
+SET Descripcion = 'Nueva descripción 3: Este es un curso práctico de solución de problemas ingenieriles utilizando sistemas microcontrolados. Al final del curso los estudiantes estarán preparados para resolver problemas reales de control de equipos y procesos utilizando micro-controladores.', Dificultad = 'Facil'
+WHERE CursoID = (SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0624');
 
 SELECT * FROM Tarea06DB.Descripciones;
 ```
@@ -575,7 +603,7 @@ Se puede ver que se tuvieron que modificar las claves foráneas para agregar ON 
 
 Por lo que la tabla de Cursos antes de ser modificada se veía de la siguiente manera:
 
-![Eliminar Cursos Captura Antes](images/CRUD/Eiminar/EliinarDatos1ANTES.png)
+![Eliminar Cursos Captura Antes](images/CRUD/Eiminar/EliminarDatos1ANTES.png)
 
 Y la tabla de cursos pasó a verse de la siguiente forma:
 
