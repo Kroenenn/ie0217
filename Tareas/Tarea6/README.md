@@ -90,8 +90,12 @@ USE `Tarea06DB` ;
 ```
 - Esquema: `Tarea06DB`
 
+La base de datos antes de crearse el esquema se veía de la siguiente forma:
+
 ![Creación de la base de datos](images/basenocreada.png)
 
+
+Luego de correr el código de creación, pasó a verse  así:
 
 ![Creación de la base de datos 2](images/basecreada.png)
 
@@ -330,7 +334,7 @@ VALUES
 SELECT * FROM `Tarea06DB`.Cursos;
 ```
 
-Por lo que la tabla de Cursos antes de ser modificada se veía así:
+Por lo que la tabla de Cursos antes de ser modificada para agregar los cursos inventados se veía así:
 
 ![Inserción de cursos inventados](images/CRUD/Crear/AgregandoCursoInventado_Cursos_ANTES.png)
 
@@ -390,6 +394,8 @@ Por lo que los resultados obtenidos fueron los siguientes:
 
 ![Mostrar Cursos con Descripciones Captura 2](images/CRUD/Leer/LeerDatos2.png)
 
+Se puede apreciar ue el resultado obtenido fue el deseado, donde se puede ver la descripciones y dificultades.
+
 ##### 2. Consultar requisitos de un curso específico
 
 EL código utilizado fue:
@@ -407,6 +413,8 @@ Por lo que los resultados fueron:
 
 ![Consultar Requisitos de Curso Captura](images/CRUD/Leer/LeerDatos3.png)
 
+EL resultado obtenido fue el deseado, donde para el curso IE-0471 se muestran los requisitos.
+
 ##### 3. Listar cursos que no son optativos
 
 EL código utilizado fue:
@@ -420,13 +428,16 @@ WHERE Semestre LIKE '%X%'
   AND Nombre NOT LIKE '%Optativa%';
 ```
 
-Por lo que los resultados fueron:
+Cabe destacar que esta opción que se colocó fue para que no aparecieran los optativos del todo ni los que dicen Optativa en el plan inicial.
+
+Por lo que los resultados fueron, si se decide que no salgan los Optativos como tal literalmente:
+
+![Listar Cursos No Optativos Captura](images/CRUD/Leer/LeerDatos4v2.png)
+
+Si se deseara que salgan los que dicen Optativa nada más se removería el "AND Nombre NOT LIKE '%Optativa%'" y se vería así:
 
 ![Listar Cursos No Optativos Captura](images/CRUD/Leer/LeerDatos4v1.png)
 
-Si se decide que no salgan los Optativos como tal literalmente:
-
-![Listar Cursos No Optativos Captura](images/CRUD/Leer/LeerDatos4v2.png)
 
 #### Actualización de Datos
 
