@@ -84,6 +84,8 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+-- SELECT * FROM `Tarea06DB`.Cursos;
+
 INSERT INTO `Tarea06DB`.Cursos(Sigla, Nombre, Semestre, Creditos)
 VALUES ("IE-0579", "Administración de sistemas", "IX", 4),
        ("IE-0613", "Electrónica Industrial", "IX", 4),
@@ -105,7 +107,7 @@ VALUES ("IE-0117", "Programación bajo plataformas abiertas", 3),
        ("IE-0471", "Diseño eléctrico industrial I", 3);
 
 -- SELECT * FROM `Tarea06DB`.Cursos;
-       
+
 INSERT INTO `Tarea06DB`.Cursos(Sigla, Nombre, Semestre, Creditos)
 VALUES("IE-0479", "Ingeniería económica", "VIII", 3),
       ("IE-0413", "Electrónica II", "V", 3),
@@ -118,12 +120,16 @@ VALUES("IE-0479", "Ingeniería económica", "VIII", 3),
 
 -- SELECT * FROM `Tarea06DB`.Cursos;
 
+-- SELECT * FROM `Tarea06DB`.Requisitos;
+
 INSERT INTO `Tarea06DB`.Requisitos(CursoID, RequisitoCursoID)
 VALUE(1,15), (2,21), (2,16), (3,17), (6,18),
 (9,19), (10,20), (12,11), (13,12), (14,21),
 (14,22), (6,1);
 
 -- SELECT * FROM `Tarea06DB`.Requisitos;
+
+-- SELECT * FROM `Tarea06DB`.Descripciones;
 
 INSERT INTO `Tarea06DB`.Descripciones(CursoID, Descripcion, Dificultad)
 VALUE(1, "El profesional en ingeniería eléctrica se verá, tan pronto se incorpore al mercado laboral, en actividades técnicas que se relacionarán con diferentes tipos de organizaciones o empresas, leyes, reglamentos, normativas y muchos otros condicionantes, cuyo funcionamiento es una responsabilidad conocer.
