@@ -297,23 +297,23 @@ ON DELETE CASCADE;
 -- 1. Eliminar un curso inventado y 2 cursos del plan y sus descripciones asociadas
 
 -- Verificar que los cursos existen en la tabla Cursos
-SELECT * FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613');
+SELECT * FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1401', 'IE-0579', 'IE-0613');
 
 -- Verificar que las descripciones de los cursos eliminados existen en la tabla Descripciones
 SELECT * FROM Tarea06DB.Descripciones WHERE CursoID IN (
-    SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613')
+    SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1401', 'IE-0579', 'IE-0613')
 );
 
-DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-1001';  -- Curso inventado
+DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-1401';  -- Curso inventado
 DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0579';  -- Curso del plan (Administración de sistemas)
 DELETE FROM Tarea06DB.Cursos WHERE Sigla = 'IE-0613';  -- Curso del plan (Electrónica Industrial)
 
 -- Verificar que los cursos no existen en la tabla Cursos
-SELECT * FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613');
+SELECT * FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1401', 'IE-0579', 'IE-0613');
 
 -- Verificar que las descripciones de los cursos eliminados no existen en la tabla Descripciones
 SELECT * FROM Tarea06DB.Descripciones WHERE CursoID IN (
-    SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1001', 'IE-0579', 'IE-0613')
+    SELECT idCursos FROM Tarea06DB.Cursos WHERE Sigla IN ('IE-1401', 'IE-0579', 'IE-0613')
 );
 
 
