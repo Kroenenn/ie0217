@@ -101,6 +101,8 @@ Luego de correr el código de creación, pasó a verse  así:
 
 2. **Creación de la Tablas `Cursos`, `Requisitos` y `Descripciones`**
 
+DISCLAIMER: Me di cuenta en la parte de eliminación de datos de las operaciones CRUD que faltó poner la opción de borrar en cascada para las llaves foráneas. Esa modificación se realizó con un ALTER TABLE más abajo en la solución.
+
 ```sql
 -- -----------------------------------------------------
 -- Table `Tarea06DB`.`Cursos`
