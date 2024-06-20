@@ -394,7 +394,7 @@ Por lo que los resultados obtenidos fueron los siguientes:
 
 ![Mostrar Cursos con Descripciones Captura 2](images/CRUD/Leer/LeerDatos2.png)
 
-Se puede apreciar ue el resultado obtenido fue el deseado, donde se puede ver la descripciones y dificultades.
+Se puede apreciar que el resultado obtenido fue el deseado, donde se pueden ver la descripciones y dificultades.
 
 ##### 2. Consultar requisitos de un curso específico
 
@@ -413,7 +413,7 @@ Por lo que los resultados fueron:
 
 ![Consultar Requisitos de Curso Captura](images/CRUD/Leer/LeerDatos3.png)
 
-EL resultado obtenido fue el deseado, donde para el curso IE-0471 se muestran los requisitos.
+El resultado obtenido fue el deseado, donde para el curso IE-0471 se muestran los requisitos.
 
 ##### 3. Listar cursos que no son optativos
 
@@ -477,6 +477,8 @@ Y la tabla de Cursos pasó a actualizarse con los siguientes resultados.
 
 ![Actualizar Cursos Captura](images/CRUD/Actualizar/ActualizarDatos1.png)
 
+Se pueden ver los nuevos cursos agregados encima de las optativas, IE-2222, IE-3333, IE-4444.
+
 ##### 2. Actualizar la descripción y dificultad de 3 cursos existentes
 
 EL código utilizado fue:
@@ -513,7 +515,7 @@ Y la tabla Descripciones pasó a verse de la siguiente manera:
 
 ##### 1. Eliminar un curso inventado y 2 cursos del plan y sus descripciones asociadas
 
-EL código utilizado fue:
+El código utilizado fue:
 
 ```sql
 -- -----------------------------------------------------
