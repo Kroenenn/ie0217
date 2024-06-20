@@ -461,7 +461,8 @@ Si se deseara que salgan los que dicen Optativa nada más se removería el "AND 
 
 SELECT Sigla, Nombre, Semestre, Creditos
 FROM Tarea06DB.Cursos
-WHERE Semestre LIKE '%X%';
+WHERE Semestre LIKE '%X%'
+	AND Semestre NOT LIKE '%IX%';
 ```
 
 ![Listar Cursos Semestre X](images/CRUD/Leer/LeerDatos5.png)
