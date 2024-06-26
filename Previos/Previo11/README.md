@@ -15,7 +15,7 @@ Instale MySQL Server utilizando:
 ```bash
 sudo apt-get install mysql-server
 ```
-Si no sirve, se debe instalar mysql con wget libraty, y se puede intentar este comando `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B7B3B788A8D3785C`, y se vuelve a intentar el sudo apt-get.
+Si no sirve, se debe instalar mysql con wget library, y se puede intentar este comando `sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B7B3B788A8D3785C`, y se vuelve a intentar el sudo apt-get.
 
 ### Verificar el estado de MySQL
 Para comprobar si MySQL está activo:
